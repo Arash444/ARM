@@ -19,7 +19,7 @@ module IF_Stage(
     PC pc_inst (
         .clk(clk),
         .rst(rst),
-        .ld(freeze),
+        .freeze(freeze),
         .in(mux_out),
         .out(pc_out)
     );

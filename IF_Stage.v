@@ -14,6 +14,8 @@ module IF_Stage(
 
     wire [31:0] pc_out, adder_out, mux_out;
 
+    assign pc = adder_out;
+
     PC pc_inst (
         .clk(clk),
         .rst(rst),

@@ -1,4 +1,4 @@
-module MEM_Stage (
+module WB_Stage (
     clk,
     rst,
     pc_in,

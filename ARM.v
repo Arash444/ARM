@@ -1,6 +1,8 @@
-module ARM (clk, rst);
+module ARM (clk, rst, pc_out);
     
     input clk, rst;
+
+    output [31:0] pc_out;
 
     wire [31:0] pc_if,
                 pc_if_reg,
@@ -24,6 +26,8 @@ module ARM (clk, rst);
     assign branch_taken = 1'b0;
 
     assign branch_addr = 32'b0;
+    
+    assign pc_out = pc_wb;
 
     IF_Stage if_st(
         .clk(clk),
@@ -103,5 +107,4 @@ module ARM (clk, rst);
         .pc_in(pc_mem_reg),
         .pc(pc_wb)
     );
-
 endmodule

@@ -1,0 +1,47 @@
+# Compile of Adder.v was successful.
+# Compile of ARM.v was successful.
+# Compile of EXE_Reg.v was successful.
+# Compile of EXE_Stage.v was successful.
+# Compile of ID_Reg.v was successful.
+# Compile of ID_Stage.v was successful.
+# Compile of IF_Reg.v was successful.
+# Compile of IF_Stage.v was successful.
+# Compile of Instru_mem.v was successful.
+# Compile of MEM_Reg.v was successful.
+# Compile of MEM_Stage.v was successful.
+# Compile of Mux_2_1.v was successful.
+# Compile of PC.v was successful.
+# Compile of WB_Stage.v was successful.
+# Compile of testbench.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 10:35:14 on Mar 04,2023
+# Loading work.testbench
+# Loading work.ARM
+# Loading work.IF_Stage
+# Loading work.PC
+# Loading work.Adder
+# Loading work.Mux_2_1
+# Loading work.Instru_mem
+# Loading work.IF_Reg
+# Loading work.ID_Stage
+# Loading work.ID_Reg
+# Loading work.EXE_Stage
+# Loading work.EXE_Reg
+# Loading work.MEM_Stage
+# Loading work.MEM_Reg
+# Loading work.WB_Stage
+add wave -position insertpoint sim:/testbench/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: shead  Hostname: SHEADEH-SURFACE  ProcessID: 14740
+#           Attempting to use alternate WLF file "./wlft23ng5y".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft23ng5y
+add wave -position insertpoint sim:/testbench/ARM1/*
+run -all
+# ** Note: $stop    : C:/CALab/Project1/ARM/testbench.v(11)
+#    Time: 220 ps  Iteration: 0  Instance: /testbench
+# Break in Module testbench at C:/CALab/Project1/ARM/testbench.v line 11
+# End time: 11:12:49 on Mar 04,2023, Elapsed time: 0:37:35
+# Errors: 0, Warnings: 4

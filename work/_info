@@ -57,6 +57,30 @@ Z8 !s108 1677913479.000000
 R6
 R7
 n@a@r@m
+vControlUnit
+!s110 1680109405
+!i10b 1
+!s100 RI?5628dCRLz1SUD?@BYD0
+R1
+INQ:mQg@OmkUBKgRIf]Xzn3
+R2
+dC:/project/ARM
+w1680109398
+8C:/project/ARM/ControlUnit.v
+FC:/project/ARM/ControlUnit.v
+!i122 53
+L0 1 70
+R5
+r1
+!s85 0
+31
+!s108 1680109404.000000
+!s107 C:/project/ARM/ControlUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ControlUnit.v|
+!i113 1
+R6
+R7
+n@control@unit
 vEXE_Reg
 R0
 !i10b 1

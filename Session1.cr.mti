@@ -75,13 +75,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	MEM_Stage
 
-} {} {}} C:/project/Lab_CA/Session1/PC.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/PC.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PC
-
-Top level modules:
-	PC
-
 } {} {}} C:/project/Lab_CA/Session1/Instru_mem.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/Instru_mem.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Instru_mem
@@ -89,12 +82,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Instru_mem
 
-} {} {}} C:/project/Lab_CA/Session1/WB_Stage.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/WB_Stage.v
+} {} {}} C:/project/Lab_CA/Session1/PC.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module WB_Stage
+-- Compiling module PC
 
 Top level modules:
-	WB_Stage
+	PC
 
 } {} {}} C:/project/Lab_CA/Session1/IF_Reg.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/IF_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -102,5 +95,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	IF_Reg
+
+} {} {}} C:/project/Lab_CA/Session1/WB_Stage.v {1 {vlog -work work -stats=none C:/project/Lab_CA/Session1/WB_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module WB_Stage
+
+Top level modules:
+	WB_Stage
 
 } {} {}}

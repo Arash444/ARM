@@ -10,385 +10,409 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vAdder
-Z0 !s110 1677913479
+!s110 1680109557
 !i10b 1
 !s100 8<T4BM_PoQ[``z<gSX1le2
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I^P;0PGM_`??enA1_XgLbN1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dC:/CALab/Project1/ARM
-Z4 w1677670428
-8C:/CALab/Project1/ARM/Adder.v
-FC:/CALab/Project1/ARM/Adder.v
-!i122 36
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>Cj`5RMKh9E_`Y68j5jaj1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/project/ARM
+Z3 w1680012942
+8C:/project/ARM/Adder.v
+FC:/project/ARM/Adder.v
+!i122 56
 L0 1 12
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1677913478.000000
-!s107 C:/CALab/Project1/ARM/Adder.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/Adder.v|
+!s108 1680109557.000000
+!s107 C:/project/ARM/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Adder.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@adder
-vARM
-R0
+vAltera
+!s110 1680109558
 !i10b 1
-!s100 8[9kbMPkbRcgfX@e2=M6C3
+!s100 hQS221HOWngPo2N`^`k@S2
+R0
+I19L[R`ISS[[zOQOW^3j9O0
 R1
-Io2G@:G>1:f6hJ=TCNch3I0
 R2
 R3
-w1677913475
-8C:/CALab/Project1/ARM/ARM.v
-FC:/CALab/Project1/ARM/ARM.v
-!i122 37
-L0 1 113
-R5
+8C:/project/ARM/Altera.V
+FC:/project/ARM/Altera.V
+!i122 57
+L0 48 265
+R4
 r1
 !s85 0
 31
-Z8 !s108 1677913479.000000
-!s107 C:/CALab/Project1/ARM/ARM.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/ARM.v|
+!s108 1680109558.000000
+!s107 C:/project/ARM/Altera.V|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Altera.V|
 !i113 1
+R5
 R6
-R7
+n@altera
+vARM
+!s110 1680109559
+!i10b 1
+!s100 gH>b;PF=9a[G76dI4]C1Y1
+R0
+IdV3a[l[cGYHP^jEH<0Z_?2
+R1
+R2
+R3
+8C:/project/ARM/ARM.v
+FC:/project/ARM/ARM.v
+!i122 58
+L0 1 110
+R4
+r1
+!s85 0
+31
+!s108 1680109559.000000
+!s107 C:/project/ARM/ARM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ARM.v|
+!i113 1
+R5
+R6
 n@a@r@m
 vControlUnit
-!s110 1680109405
+!s110 1680109560
 !i10b 1
 !s100 RI?5628dCRLz1SUD?@BYD0
-R1
+R0
 INQ:mQg@OmkUBKgRIf]Xzn3
+R1
 R2
-dC:/project/ARM
 w1680109398
 8C:/project/ARM/ControlUnit.v
 FC:/project/ARM/ControlUnit.v
-!i122 53
+!i122 59
 L0 1 70
-R5
+R4
 r1
 !s85 0
 31
-!s108 1680109404.000000
+!s108 1680109560.000000
 !s107 C:/project/ARM/ControlUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ControlUnit.v|
 !i113 1
+R5
 R6
-R7
 n@control@unit
 vEXE_Reg
-R0
+!s110 1680109561
 !i10b 1
 !s100 `mG2>8W67jkh;g8_gca=G2
+R0
+IU<SD6QUOLB:g5HCFfbjC]1
 R1
-Ie?2Z:>>h674[ENdoJPNMG0
 R2
 R3
+8C:/project/ARM/EXE_Reg.v
+FC:/project/ARM/EXE_Reg.v
+!i122 60
+Z7 L0 1 19
 R4
-8C:/CALab/Project1/ARM/EXE_Reg.v
-FC:/CALab/Project1/ARM/EXE_Reg.v
-!i122 38
-Z9 L0 1 19
-R5
 r1
 !s85 0
 31
-R8
-!s107 C:/CALab/Project1/ARM/EXE_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/EXE_Reg.v|
+!s108 1680109561.000000
+!s107 C:/project/ARM/EXE_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/EXE_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@e@x@e_@reg
 vEXE_Stage
-R0
+!s110 1680109562
 !i10b 1
 !s100 ]]dn];ge;d7N>Kh8:PaL21
+R0
+I6Th1Web3IgKXRlLWTZ?a[3
 R1
-I1:A=aKDdVeggi]4HzmY:52
 R2
 R3
+8C:/project/ARM/EXE_Stage.v
+FC:/project/ARM/EXE_Stage.v
+!i122 61
+Z8 L0 1 14
 R4
-8C:/CALab/Project1/ARM/EXE_Stage.v
-FC:/CALab/Project1/ARM/EXE_Stage.v
-!i122 39
-Z10 L0 1 14
-R5
 r1
 !s85 0
 31
-R8
-!s107 C:/CALab/Project1/ARM/EXE_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/EXE_Stage.v|
+!s108 1680109562.000000
+!s107 C:/project/ARM/EXE_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/EXE_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@e@x@e_@stage
 vID_Reg
-R0
+!s110 1680116224
 !i10b 1
-!s100 P?DGoRD@XzfT`m?<HGj=_3
+!s100 ?LB5aRQYN6o^bYzWc7dX83
+R0
+IbnYgzBG85nNN?UEO2<K[:1
 R1
-InS:o9n83`IaR5]Fd]eRTW2
 R2
-R3
+w1680116216
+8C:/project/ARM/ID_Reg.v
+FC:/project/ARM/ID_Reg.v
+!i122 76
+L0 1 92
 R4
-8C:/CALab/Project1/ARM/ID_Reg.v
-FC:/CALab/Project1/ARM/ID_Reg.v
-!i122 40
-R9
-R5
 r1
 !s85 0
 31
-R8
-!s107 C:/CALab/Project1/ARM/ID_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/ID_Reg.v|
+!s108 1680116223.000000
+!s107 C:/project/ARM/ID_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ID_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@i@d_@reg
 vID_Stage
-R0
+!s110 1680109564
 !i10b 1
 !s100 FBY@i[XMY4IaI1iL;Sfz50
+R0
+IPoKG`eUWWK7U>EohUGEA11
 R1
-IVe9AVl169FM0jU3eaZ7U?3
 R2
 R3
+8C:/project/ARM/ID_Stage.v
+FC:/project/ARM/ID_Stage.v
+!i122 63
+R8
 R4
-8C:/CALab/Project1/ARM/ID_Stage.v
-FC:/CALab/Project1/ARM/ID_Stage.v
-!i122 41
-R10
-R5
 r1
 !s85 0
 31
-R8
-!s107 C:/CALab/Project1/ARM/ID_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/ID_Stage.v|
+Z9 !s108 1680109564.000000
+!s107 C:/project/ARM/ID_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ID_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@i@d_@stage
 vIF_Reg
-Z11 !s110 1677913480
+!s110 1680109565
 !i10b 1
 !s100 jEn[^9jR?zN@:ED;JQ0eR1
+R0
+IX3dQIUm3C:0;JA5NE0C;X2
 R1
-IISa[kAXCSa2XjShj^T<Z[2
 R2
 R3
-R4
-8C:/CALab/Project1/ARM/IF_Reg.v
-FC:/CALab/Project1/ARM/IF_Reg.v
-!i122 42
+8C:/project/ARM/IF_Reg.v
+FC:/project/ARM/IF_Reg.v
+!i122 64
 L0 1 27
-R5
+R4
 r1
 !s85 0
 31
-R8
-!s107 C:/CALab/Project1/ARM/IF_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/IF_Reg.v|
+R9
+!s107 C:/project/ARM/IF_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/IF_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@i@f_@reg
 vIF_Stage
-R11
+!s110 1680109566
 !i10b 1
 !s100 zb1fGLlZXezeeLeXEH6:l1
+R0
+I^32<bUfQ2[2^niYeQXXE70
 R1
-IFdbz5Ld6VUGcZoM]UNU=n2
 R2
-R3
-w1677673493
-8C:/CALab/Project1/ARM/IF_Stage.v
-FC:/CALab/Project1/ARM/IF_Stage.v
-!i122 43
+w1680013752
+8C:/project/ARM/IF_Stage.v
+FC:/project/ARM/IF_Stage.v
+!i122 65
 L0 1 45
-R5
+R4
 r1
 !s85 0
 31
-Z12 !s108 1677913480.000000
-!s107 C:/CALab/Project1/ARM/IF_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/IF_Stage.v|
+!s108 1680109565.000000
+!s107 C:/project/ARM/IF_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/IF_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@i@f_@stage
 vInstru_mem
-R11
+!s110 1680109567
 !i10b 1
 !s100 ;RX=dA2k;Q@bi<@P5FbiX1
+R0
+IWQ`0HjEPfKd1]NDKPY4Pn1
 R1
-IaoKMQ@;H<`iAjA`XHLSgi0
 R2
 R3
-R4
-8C:/CALab/Project1/ARM/Instru_mem.v
-FC:/CALab/Project1/ARM/Instru_mem.v
-!i122 44
+8C:/project/ARM/Instru_mem.v
+FC:/project/ARM/Instru_mem.v
+!i122 66
 L0 1 21
-R5
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/Instru_mem.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/Instru_mem.v|
+!s108 1680109566.000000
+!s107 C:/project/ARM/Instru_mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Instru_mem.v|
 !i113 1
+R5
 R6
-R7
 n@instru_mem
 vMEM_Reg
-R11
+!s110 1680109568
 !i10b 1
 !s100 ^]hjcbI]1L2[?oTOeoG?f2
+R0
+Ij?o9ohS^?lLD`7JLm[TBa1
 R1
-Ij4>[G`hQC;0UI3d2Ung5H3
 R2
 R3
+8C:/project/ARM/MEM_Reg.v
+FC:/project/ARM/MEM_Reg.v
+!i122 67
+R7
 R4
-8C:/CALab/Project1/ARM/MEM_Reg.v
-FC:/CALab/Project1/ARM/MEM_Reg.v
-!i122 45
-R9
-R5
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/MEM_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/MEM_Reg.v|
+!s108 1680109567.000000
+!s107 C:/project/ARM/MEM_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@m@e@m_@reg
 vMEM_Stage
-R11
+!s110 1680109569
 !i10b 1
 !s100 GFECif;H]Uo<KHIbZ`YES2
+R0
+I:mRhT5k>o077z6Bm3:mJB3
 R1
-IGb?zkA[YWBda`hk=0Bk]72
 R2
 R3
+8C:/project/ARM/MEM_Stage.v
+FC:/project/ARM/MEM_Stage.v
+!i122 68
+R8
 R4
-8C:/CALab/Project1/ARM/MEM_Stage.v
-FC:/CALab/Project1/ARM/MEM_Stage.v
-!i122 46
-R10
-R5
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/MEM_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/MEM_Stage.v|
+!s108 1680109568.000000
+!s107 C:/project/ARM/MEM_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@m@e@m_@stage
 vMux_2_1
-R11
+!s110 1680116112
 !i10b 1
 !s100 e0Pl39CR_1]Q0VH>:_2ed2
+R0
+IZ9UBYPkM]KaazIXQF_25Y3
 R1
-Ihg1aQB_15K>LgTlS9N5JC1
 R2
-R3
-R4
-8C:/CALab/Project1/ARM/Mux_2_1.v
-FC:/CALab/Project1/ARM/Mux_2_1.v
-!i122 47
+w1680109688
+8C:/project/ARM/Mux_2_1.v
+FC:/project/ARM/Mux_2_1.v
+!i122 74
 L0 1 15
-R5
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/Mux_2_1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/Mux_2_1.v|
+!s108 1680116112.000000
+!s107 C:/project/ARM/Mux_2_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Mux_2_1.v|
 !i113 1
+R5
 R6
-R7
 n@mux_2_1
 vPC
-R11
+!s110 1680109571
 !i10b 1
 !s100 TmX]Td?V1UeEHCc;mfEUV3
+R0
+IR1TIo`3c3Pk:dAXnO^gJ=1
 R1
-IBNEECLQ@S@Pifz@@_Ndm02
 R2
 R3
-w1677673486
-8C:/CALab/Project1/ARM/PC.v
-FC:/CALab/Project1/ARM/PC.v
-!i122 48
+8C:/project/ARM/PC.v
+FC:/project/ARM/PC.v
+!i122 70
 L0 1 22
-R5
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/PC.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/PC.v|
+!s108 1680109570.000000
+!s107 C:/project/ARM/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/PC.v|
 !i113 1
+R5
 R6
-R7
 n@p@c
 vtestbench
-R11
+!s110 1680109573
 !i10b 1
 !s100 5oHGUGeBfJIFnB6JgBXSQ3
+R0
+IVTdc=L1P5^@DdZg`Ij48S1
 R1
-I:N[:m6@jT0Y@^1@bREW6M0
 R2
 R3
-w1677672169
-8C:/CALab/Project1/ARM/testbench.v
-FC:/CALab/Project1/ARM/testbench.v
-!i122 50
+8C:/project/ARM/testbench.v
+FC:/project/ARM/testbench.v
+!i122 72
 L0 1 13
-R5
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/testbench.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/testbench.v|
+!s108 1680109572.000000
+!s107 C:/project/ARM/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/testbench.v|
 !i113 1
+R5
 R6
-R7
 vWB_Stage
-R11
+!s110 1680109574
 !i10b 1
 !s100 XG^Z45gnEGW>gZ5e4KaUF3
+R0
+IhD1Q_XR`hDlP7^NebN>2K1
 R1
-I3DFGFQYl4OdkA5C_`n5nl3
 R2
 R3
-w1677672221
-8C:/CALab/Project1/ARM/WB_Stage.v
-FC:/CALab/Project1/ARM/WB_Stage.v
-!i122 49
-R10
-R5
+8C:/project/ARM/WB_Stage.v
+FC:/project/ARM/WB_Stage.v
+!i122 73
+R8
+R4
 r1
 !s85 0
 31
-R12
-!s107 C:/CALab/Project1/ARM/WB_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/CALab/Project1/ARM/WB_Stage.v|
+!s108 1680109573.000000
+!s107 C:/project/ARM/WB_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/WB_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@w@b_@stage

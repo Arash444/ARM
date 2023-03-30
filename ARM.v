@@ -56,9 +56,9 @@ module ARM (
         dest_ID,
         dest_ID_Reg;
 
-    // assign freeze = 1'b0;
-    // assign flush = 1'b0;
-    assign branch_taken = 1'b0;
+    assign freeze = 1'b0;
+    assign branch_taken = B_ID_Reg;
+    assign flush = branch_taken;
     assign branch_addr = 32'b0;
 
     assign pc_out = pc_wb;

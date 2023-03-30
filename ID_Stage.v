@@ -84,6 +84,11 @@ module ID_Stage (
     wire [3:0]
         EXE_CMD_CU;
 
+    assign imm = instruction[25];
+    assign Shift_operand = instruction[11:0];
+    assign Signed_imm_24 = instruction[23:0];
+    assign Dest = instruction[15:12];
+
 
     ControlUnit CU(
         .OPcode(instruction[24:21]), 

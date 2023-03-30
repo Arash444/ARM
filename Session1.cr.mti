@@ -5,12 +5,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Mux_2_1
 
+} {} {}} C:/project/ARM/Condition_Check.v {1 {vlog -work work -stats=none C:/project/ARM/Condition_Check.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Condition_Check
+
+Top level modules:
+	Condition_Check
+
 } {} {}} C:/project/ARM/MEM_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/MEM_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MEM_Reg
 
 Top level modules:
 	MEM_Reg
+
+} {} {}} C:/project/ARM/RegisterFile.v {1 {vlog -work work -stats=none C:/project/ARM/RegisterFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
 
 } {} {}} C:/project/ARM/EXE_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -95,13 +109,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	EXE_Reg
-
-} {} {}} C:/project/ARM/ID_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ID_Stage
-
-Top level modules:
-	ID_Stage
 
 } {} {}} C:/project/ARM/ARM.v {1 {vlog -work work -stats=none C:/project/ARM/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

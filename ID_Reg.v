@@ -41,14 +41,15 @@ module ID_Reg (
         B_in,
         S_in,
         imm_in;
-    input [3:0] EXE_CMD_in;
+    input [3:0] 
+        EXE_CMD_in,
+        dest_in;
     input [31:0]
         pc_in,
         Val_Rn_in,
         Val_Rm_in;
     input [11:0] shift_operand_in;
     input [23:0] signed_imm_24_in;
-    input [3:0] dest_in;
 
 
     output reg  WB_EN,

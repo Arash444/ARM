@@ -112,6 +112,7 @@ module ID_Stage (
     );
 
     assign cond_or = (~cond_check) | hazard;
+    assign src1 = instruction[19:16];
 
     Mux_2_1 #(9) Mux_CU_out (
         .a({S_CU, B_CU, Mem_W_EN_CU, Mem_R_EN_CU, WB_EN_CU, EXE_CMD_CU}),
@@ -130,7 +131,7 @@ module ID_Stage (
     RegisterFile RF (
         .clk(clk),
         .rst(rst),
-        .src1(instruction[19:16]),
+        .src1(src1),
         .src2(src2),
         .Dest_wb(Dest_wb),
         .Result_wb(Result_WB),

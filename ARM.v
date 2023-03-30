@@ -1,23 +1,33 @@
-module ARM (clk, rst, pc_out);
+module ARM (
+    clk,
+    rst,
+    pc_out
+);
     
-    input clk, rst;
+    input
+        clk,
+        rst;
 
     output [31:0] pc_out;
 
-    wire [31:0] pc_if,
-                pc_if_reg,
-                pc_id,
-                pc_id_reg,
-                pc_exe,
-                pc_exe_reg,
-                pc_mem,
-                pc_mem_reg,
-                pc_wb;
+    wire [31:0] 
+            pc_if,
+            pc_if_reg,
+            pc_id,
+            pc_id_reg,
+            pc_exe,
+            pc_exe_reg,
+            pc_mem,
+            pc_mem_reg,
+            pc_wb;
 
-    wire [31:0] instruction_if, instruction_if_reg,
-                branch_addr;
+    wire [31:0] 
+            instruction_if,
+            instruction_if_reg,
+            branch_addr;
             
-    wire freeze,
+    wire 
+        freeze,
         flush,
         branch_taken;
 
@@ -28,6 +38,8 @@ module ARM (clk, rst, pc_out);
     assign branch_addr = 32'b0;
     
     assign pc_out = pc_wb;
+
+    ///////////////////////////////////////////////////// IF
 
     IF_Stage if_st(
         .clk(clk),
@@ -50,7 +62,7 @@ module ARM (clk, rst, pc_out);
         .instruction(instruction_if_reg)
     );
 
-    /////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////// ID
 
     ID_Stage id_st (
         .clk(clk),
@@ -66,8 +78,7 @@ module ARM (clk, rst, pc_out);
         .pc(pc_id_reg)
     );
 
-
-    /////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////// EXE
 
     EXE_Stage exe_st (
         .clk(clk),
@@ -83,7 +94,7 @@ module ARM (clk, rst, pc_out);
         .pc(pc_exe_reg)
     );
 
-    /////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////// MEM
 
     MEM_Stage mem_st (
         .clk(clk),
@@ -99,7 +110,7 @@ module ARM (clk, rst, pc_out);
         .pc(pc_mem_reg)
     );
 
-    /////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////// WB
 
     WB_Stage wb_st (
         .clk(clk),
@@ -107,4 +118,5 @@ module ARM (clk, rst, pc_out);
         .pc_in(pc_mem_reg),
         .pc(pc_wb)
     );
+
 endmodule

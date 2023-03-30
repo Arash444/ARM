@@ -18,7 +18,8 @@ module ARM (
         pc_exe_reg,
         pc_mem,
         pc_mem_reg,
-        pc_wb;
+        pc_wb,
+        WB_value;
     wire [31:0] 
         instruction_if,
         instruction_if_reg,
@@ -48,18 +49,36 @@ module ARM (
         S_ID,
         S_ID_Reg,
         imm_ID,
-        imm_ID_Reg;
+        imm_ID_Reg,
+        WB_WB_EN,
+        Hazard,
+        status_z,
+        status_c,
+        status_n,
+        status_v,
+        Two_src;
         
     wire [3:0] 
         EXE_CMD_ID,
         EXE_CMD_ID_Reg,
         dest_ID,
-        dest_ID_Reg;
+        dest_ID_Reg,
+        WB_Dest,
+        src1_ID,
+        src2_ID;
 
-    assign freeze = 1'b0;
+    assign status_z = 1'b0;
+    assign status_c = 1'b0;
+    assign status_n = 1'b0;
+    assign status_v = 1'b0;
+    assign Hazard = 1'b0;
+    assign freeze = Hazard;
     assign branch_taken = B_ID_Reg;
     assign flush = branch_taken;
     assign branch_addr = 32'b0;
+    assign WB_value = 32'b0;
+    assign WB_WB_EN = 1'b0;
+    assign WB_Dest = 4'b0;
 
     assign pc_out = pc_wb;
 
@@ -90,7 +109,31 @@ module ARM (
 
     ID_Stage id_st (
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .instruction(instruction_if_reg),
+        .Result_WB(WB_value),
+        .writeBackEn(WB_WB_EN),
+        .Dest_wb(WB_Dest),
+        .hazard(Hazard),
+        .status_z(status_z),
+        .status_c(status_c),
+        .status_n(status_n),
+        .status_v(status_v),
+        .WB_EN(WB_EN_ID),
+        .Mem_R_EN(MEM_R_EN_ID),
+        .Mem_W_EN(MEM_W_EN_ID),
+        .B(B_ID),
+        .S(S_ID),
+        .EXE_CMD(EXE_CMD_ID),
+        .Val_Rn(Val_Rn_ID),
+        .Val_Rm(Val_Rm_ID),
+        .imm(imm_ID),
+        .Shift_operand(shift_operand_ID),
+        .Signed_imm_24(signed_imm_24_ID),
+        .Dest(dest_ID),
+        .src1(src1_ID),
+        .src2(src2_ID),
+        .Two_src(Two_src)
     );
 
     ID_Reg id_re (

@@ -441,6 +441,30 @@ r1
 R5
 R6
 n@register@file
+vStatusRegister
+!s110 1680946036
+!i10b 1
+!s100 =MdO2^B:[dAhBmTDlFL8L3
+R0
+IeGC]>29RcWi6=[>LGAPBW0
+R1
+R2
+w1680945954
+8C:/project/ARM/StatusRegister.v
+FC:/project/ARM/StatusRegister.v
+!i122 161
+L0 1 32
+R4
+r1
+!s85 0
+31
+!s108 1680946035.000000
+!s107 C:/project/ARM/StatusRegister.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/StatusRegister.v|
+!i113 1
+R5
+R6
+n@status@register
 vTB
 !s110 1680944678
 !i10b 1

@@ -8,6 +8,7 @@ module ID_Reg (
     EXE_CMD_in,
     B_in,
     S_in,
+    inC,
     pc_in,
     Val_Rn_in,
     Val_Rm_in,
@@ -22,6 +23,7 @@ module ID_Reg (
     EXE_CMD,
     B,
     S,
+    outC,
     pc,
     Val_Rn,
     Val_Rm,
@@ -40,7 +42,8 @@ module ID_Reg (
         Mem_W_EN_in,
         B_in,
         S_in,
-        imm_in;
+        imm_in,
+        inC;
     input [3:0] 
         EXE_CMD_in,
         dest_in;
@@ -57,7 +60,8 @@ module ID_Reg (
                 Mem_W_EN,
                 B,
                 S,
-                imm;
+                imm,
+                outC;
     output reg [3:0] EXE_CMD;
     output reg [31:0]
         pc,
@@ -69,9 +73,9 @@ module ID_Reg (
 
     always @(posedge clk, posedge rst) begin
         if (rst)
-            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest} <= 146'b0;
+            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC} <= 147'b0;
         else if (flush)
-            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest} <= 146'b0;
+            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC} <= 147'b0;
         else begin
             WB_EN <= WB_EN_in;
             Mem_R_EN <= Mem_R_EN_in;
@@ -86,6 +90,7 @@ module ID_Reg (
             shift_operand <= shift_operand_in;
             signed_imm_24 <= signed_imm_24_in;
             dest <= dest_in;
+            outC <= inC;
         end
 
     end

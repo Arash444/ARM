@@ -57,6 +57,30 @@ r1
 R5
 R6
 n@altera
+vALU
+!s110 1680944933
+!i10b 1
+!s100 L0YM`Oe>USNL1ofZAdLk51
+R0
+IchFO8L_c0IHK^:nOaU^5[0
+R1
+R2
+w1680944920
+8C:/project/ARM/ALU.v
+FC:/project/ARM/ALU.v
+!i122 160
+L0 1 54
+R4
+r1
+!s85 0
+31
+!s108 1680944933.000000
+!s107 C:/project/ARM/ALU.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ALU.v|
+!i113 1
+R5
+R6
+n@a@l@u
 vARM
 !s110 1680155662
 !i10b 1
@@ -418,7 +442,7 @@ R5
 R6
 n@register@file
 vTB
-!s110 1680157120
+!s110 1680944678
 !i10b 1
 !s100 a2JBHcJM50CQCY2M^6j_Q0
 R0
@@ -428,13 +452,13 @@ R2
 w1680157114
 8C:/project/ARM/TB.v
 FC:/project/ARM/TB.v
-!i122 157
+!i122 158
 Z9 L0 1 13
 R4
 r1
 !s85 0
 31
-!s108 1680157119.000000
+!s108 1680944677.000000
 !s107 C:/project/ARM/TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/TB.v|
 !i113 1

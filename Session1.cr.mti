@@ -12,13 +12,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Condition_Check
 
-} {} {}} C:/project/ARM/MEM_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/MEM_Reg.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MEM_Reg
-
-Top level modules:
-	MEM_Reg
-
 } {} {}} C:/project/ARM/RegisterFile.v {1 {vlog -work work -stats=none C:/project/ARM/RegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RegisterFile

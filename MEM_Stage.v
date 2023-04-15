@@ -1,14 +1,18 @@
 module MEM_Stage (
     clk,
     rst,
-    pc_in,
-    pc
+    ALU_res,
+    Val_Rm,
+    Mem_R_EN,
+    Mem_W_EN,
+
+    Mem_Data
 );
+    input Mem_R_EN, Mem_W_EN, clk, rst;
+    input [31:0] Val_Rm, ALU_res;
 
-    input clk, rst;
-    input [31:0] pc_in;
-    output [31:0] pc;
+    output reg [31:0] Mem_Data;
 
-    assign pc = pc_in;
+    assign Mem_Data = 32'b0;
 
 endmodule

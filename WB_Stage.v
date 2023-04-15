@@ -1,14 +1,14 @@
 module WB_Stage (
-    clk,
-    rst,
-    pc_in,
-    pc
+    ALU_res,
+    Mem_Data,
+    MEM_R_EN,
+    result
 );
 
-    input clk, rst;
-    input [31:0] pc_in;
-    output [31:0] pc;
+    input MEM_R_EN;
+    input [31:0] Mem_Data, ALU_res;
+    output [31:0] result;
 
-    assign pc = pc_in;
+    Mux_2_1 MUX32(ALU_res, Mem_Data, MEM_R_EN, result);
 
 endmodule

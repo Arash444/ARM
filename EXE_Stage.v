@@ -34,39 +34,53 @@ module EXE_Stage (
     wire Mem, tempC, tempZ, tempN, tempV;
 
     assign Mem = Mem_R_EN | Mem_W_EN; //or
+    
 
     assign sign_extend = {{8{signed_imm_24[23]}}, signed_imm_24};
     assign shift = sign_extend << 2'd2;
-    Adder ADD(shift, pc, Branch_Address);
 
-    ALU OALU(
-        EXE_CMD,
-        Val1,
-        Val2,
-        inC,
-        ALU_res,
-        tempC,
-        tempN,
-        tempZ,
-        tempV);
+    Adder ADD(
+        .a(shift),
+        .b(pc),
+        .out(Branch_Address)
+    );
+
+
+    ALU ALU_ins(
+        .ALU_cmd(EXE_CMD),
+        .in1(Val1),
+        .in2(Val2),
+        .inC(inC),
+        .result(ALU_res),
+        .outC(tempC),
+        .N(tempN),
+        .Z_(tempZ),
+        .V(tempV)
+    );
+
+
     StatusRegister SR(
-        clk,
-        rst,
-        S,
-        tempN,
-        tempZ,
-        tempC,
-        tempV,
-    
-        outN,
-        outZ,
-        outC,
-        outV);
+        .clk(clk),
+        .rst(rst),
+        .S(S),
+        .inN(tempN),
+        .inZ(tempZ),
+        .inC(tempC),
+        .inV(tempV),
+        
+        .outN(outN),
+        .outZ(outZ),
+        .outC(outC),
+        .outV(outV)
+    );
+
     Val2Gen V2G(
-        imm,
-        Mem,
-        shift_operand,
-        Val_Rm,
-        Val2);
+        .I(imm),
+        .Mem(Mem),
+        .shift_operand(shift_operand),
+        .Val_Rm(Val_Rm),
+        .Val2(Val2)
+    );
+
 
 endmodule

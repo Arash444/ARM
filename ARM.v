@@ -70,7 +70,6 @@ module ARM (
         Mem_Data_MEM_Reg;
 
         
-
     assign Hazard = 1'b0;
 
     assign flush = branch_taken;

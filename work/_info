@@ -369,6 +369,29 @@ r1
 R5
 R6
 n@m@e@m_@stage
+vmemory
+!s110 1681904249
+!i10b 1
+!s100 6U_6_gI2CKcG8IYm6P8>g3
+R0
+I`g?emEz03nZN4S0fW2[A?1
+R1
+R2
+w1681904011
+8C:/project/ARM/Memory.v
+FC:/project/ARM/Memory.v
+!i122 201
+Z8 L0 1 32
+R4
+r1
+!s85 0
+31
+!s108 1681904248.000000
+!s107 C:/project/ARM/Memory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Memory.v|
+!i113 1
+R5
+R6
 vMux_2_1
 !s110 1681899945
 !i10b 1
@@ -442,23 +465,23 @@ R5
 R6
 n@register@file
 vStatusRegister
-!s110 1681899953
+!s110 1681904159
 !i10b 1
 !s100 =MdO2^B:[dAhBmTDlFL8L3
 R0
 IeGC]>29RcWi6=[>LGAPBW0
 R1
 R2
-w1680945954
+w1681902539
 8C:/project/ARM/StatusRegister.v
 FC:/project/ARM/StatusRegister.v
-!i122 197
-L0 1 32
+!i122 200
+R8
 R4
 r1
 !s85 0
 31
-!s108 1681899952.000000
+!s108 1681904158.000000
 !s107 C:/project/ARM/StatusRegister.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/StatusRegister.v|
 !i113 1
@@ -466,23 +489,23 @@ R5
 R6
 n@status@register
 vTB
-!s110 1681899947
+!s110 1681901058
 !i10b 1
-!s100 6hIgV>SLei?<VF?`26o?M1
+!s100 hDY9dM@TC>0_iV3H7LPQX3
 R0
-IWDRRgISYQg`>LWS17>ln`3
+IPKS=@PX:TFoMCFMUVHLi[0
 R1
 R2
-w1681899627
+w1681901006
 8C:/project/ARM/TB.v
 FC:/project/ARM/TB.v
-!i122 191
-Z8 L0 1 13
+!i122 199
+Z9 L0 1 14
 R4
 r1
 !s85 0
 31
-!s108 1681899946.000000
+!s108 1681901057.000000
 !s107 C:/project/ARM/TB.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/TB.v|
 !i113 1
@@ -501,7 +524,7 @@ R3
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 192
-R8
+L0 1 13
 R4
 r1
 !s85 0
@@ -548,7 +571,7 @@ w1681543847
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 193
-L0 1 14
+R9
 R4
 r1
 !s85 0

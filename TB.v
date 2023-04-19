@@ -8,6 +8,6 @@ module TB ();
         rst = 0;
         #10 rst = 1;
         #10 rst = 0;
-        #190 $stop;
+        #200 $stop;
     end
 endmodule

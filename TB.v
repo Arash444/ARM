@@ -3,6 +3,7 @@ module TB ();
     ARM ARM1(clk, rst);
     always #5 clk = ~clk;
 
+
     initial begin 
         clk = 1;
         rst = 0;

@@ -82,13 +82,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PC
 
-} {} {}} C:/project/ARM/WB_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/WB_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module WB_Stage
-
-Top level modules:
-	WB_Stage
-
 } {} {}} C:/project/ARM/IF_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/IF_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module IF_Reg
@@ -96,19 +89,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	IF_Reg
 
-} {} {}} C:/project/ARM/TB.v {1 {vlog -work work -stats=none C:/project/ARM/TB.v
+} {} {}} C:/project/ARM/WB_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/WB_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module TB
+-- Compiling module WB_Stage
 
 Top level modules:
-	TB
-
-} {} {}} C:/project/ARM/Val2Gen.v {1 {vlog -work work -stats=none C:/project/ARM/Val2Gen.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Val2Gen
-
-Top level modules:
-	Val2Gen
+	WB_Stage
 
 } {} {}} C:/project/ARM/EXE_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -117,12 +103,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXE_Reg
 
-} {} {}} C:/project/ARM/ID_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Stage.v
+} {} {}} C:/project/ARM/Val2Gen.v {1 {vlog -work work -stats=none C:/project/ARM/Val2Gen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ID_Stage
+-- Compiling module Val2Gen
 
 Top level modules:
-	ID_Stage
+	Val2Gen
 
 } {} {}} C:/project/ARM/ARM.v {1 {vlog -work work -stats=none C:/project/ARM/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -131,12 +117,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ARM
 
-} {} {}} C:/project/ARM/ControlUnit.v {1 {vlog -work work -stats=none C:/project/ARM/ControlUnit.v
+} {} {}} C:/project/ARM/ID_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ControlUnit
+-- Compiling module ID_Stage
 
 Top level modules:
-	ControlUnit
+	ID_Stage
 
 } {} {}} C:/project/ARM/StatusRegister.v {1 {vlog -work work -stats=none C:/project/ARM/StatusRegister.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -145,12 +131,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	StatusRegister
 
-} {} {}} C:/project/ARM/IF_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/IF_Stage.v
+} {} {}} C:/project/ARM/ControlUnit.v {1 {vlog -work work -stats=none C:/project/ARM/ControlUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IF_Stage
+-- Compiling module ControlUnit
 
 Top level modules:
-	IF_Stage
+	ControlUnit
 
 } {} {}} C:/project/ARM/ALU.v {1 {vlog -work work -stats=none C:/project/ARM/ALU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -158,5 +144,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ALU
+
+} {} {}} C:/project/ARM/IF_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/IF_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IF_Stage
+
+Top level modules:
+	IF_Stage
 
 } {} {}}

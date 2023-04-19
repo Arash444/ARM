@@ -19,6 +19,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	Condition_Check
 
+} {} {}} C:/project/ARM/EXE_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module EXE_Stage
+
+Top level modules:
+	EXE_Stage
+
 } {} {}} C:/project/ARM/RegisterFile.v {1 {vlog -work work -stats=none C:/project/ARM/RegisterFile.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module RegisterFile

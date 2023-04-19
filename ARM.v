@@ -1,14 +1,11 @@
 module ARM (
     clk,
-    rst,
-    pc_out
+    rst
 );
     
     input
         clk,
         rst;
-
-    output [31:0] pc_out;
 
     wire 
         freeze,
@@ -16,12 +13,15 @@ module ARM (
         branch_taken,
         WB_EN_ID,
         WB_EN_ID_Reg,
+        WB_EN_EXE_Reg,
         MEM_R_EN_ID,
         MEM_R_EN_ID_Reg,
+        MEM_R_EN_EXE_Reg,
+        MEM_R_EN_MEM_Reg,
         MEM_W_EN_ID,
         MEM_W_EN_ID_Reg,
+        MEM_W_EN_EXE_Reg,
         B_ID,
-        B_ID_Reg,
         S_ID,
         S_ID_Reg,
         imm_ID,
@@ -32,12 +32,15 @@ module ARM (
         status_c,
         status_n,
         status_v,
+        tempC,
         Two_src;
+
     wire [3:0] 
         EXE_CMD_ID,
         EXE_CMD_ID_Reg,
         dest_ID,
         dest_ID_Reg,
+        dest_EXE_Reg,
         WB_Dest,
         src1_ID,
         src2_ID;
@@ -51,11 +54,6 @@ module ARM (
         pc_if,
         pc_if_reg,
         pc_ID_Reg,
-        pc_exe,
-        pc_exe_reg,
-        pc_mem,
-        pc_mem_reg,
-        pc_wb,
         WB_value,
         instruction_if,
         instruction_if_reg,
@@ -63,23 +61,20 @@ module ARM (
         Val_Rn_ID,
         Val_Rn_ID_Reg,
         Val_Rm_ID,
-        Val_Rm_ID_Reg;
+        Val_Rm_ID_Reg,
+        Val_Rm_EXE_Reg,
+        ALU_res_EXE,
+        ALU_res_EXE_Reg,
+        ALU_res_MEM_Reg,
+        Mem_Data_MEM,
+        Mem_Data_MEM_Reg;
+
         
 
-    assign status_z = 1'b0;
-    assign status_c = 1'b0;
-    assign status_n = 1'b0;
-    assign status_v = 1'b0;
-    assign WB_WB_EN = 1'b0;
     assign Hazard = 1'b0;
-    assign WB_Dest = 4'b0;
-    assign WB_value = 32'b0;
-    assign branch_addr = 32'b0;
 
-    assign branch_taken = B_ID_Reg;
     assign flush = branch_taken;
     assign freeze = Hazard;
-    assign pc_out = pc_wb;
 
     ///////////////////////////////////////////////////// IF
 
@@ -136,7 +131,7 @@ module ARM (
     );
 
     ID_Reg id_re (
-        .clk(clk),
+        .clk(clk), 
         .rst(rst),
         .flush(flush),
         .WB_EN_in(WB_EN_ID),
@@ -145,6 +140,7 @@ module ARM (
         .EXE_CMD_in(EXE_CMD_ID),
         .B_in(B_ID),
         .S_in(S_ID),
+        .inC(status_c),
         .pc_in(pc_if_reg),
         .Val_Rn_in(Val_Rn_ID),
         .Val_Rm_in(Val_Rm_ID),
@@ -157,7 +153,8 @@ module ARM (
         .Mem_R_EN(MEM_R_EN_ID_Reg),
         .Mem_W_EN(MEM_W_EN_ID_Reg),
         .EXE_CMD(EXE_CMD_ID_Reg),
-        .B(B_ID_Reg),
+        .outC(tempC),
+        .B(branch_taken),
         .S(S_ID_Reg),
         .pc(pc_ID_Reg),
         .Val_Rn(Val_Rn_ID_Reg),
@@ -170,18 +167,45 @@ module ARM (
 
     ///////////////////////////////////////////////////// EXE
 
-    EXE_Stage exe_st (
+    EXE_Stage exe_st(
         .clk(clk),
         .rst(rst),
-        .pc_in(pc_ID_Reg),
-        .pc(pc_exe)
+        .Mem_R_EN(MEM_R_EN_ID_Reg),
+        .Mem_W_EN(MEM_W_EN_ID_Reg),
+        .EXE_CMD(EXE_CMD_ID_Reg),
+        .inC(tempC),
+        .S(S_ID_Reg),
+        .pc(pc_ID_Reg),
+        .Val1(Val_Rn_ID_Reg),
+        .Val_Rm(Val_Rm_ID_Reg),
+        .imm(imm_ID_Reg),
+        .shift_operand(shift_operand_ID_Reg),
+        .signed_imm_24(signed_imm_24_ID_Reg),
+
+        .ALU_res(ALU_res_EXE),
+        .outN(status_n),
+        .outZ(status_z),
+        .outC(status_c),
+        .outV(status_v),
+        .Branch_Address(branch_addr)
     );
 
     EXE_Reg exe_re (
         .clk(clk),
         .rst(rst),
-        .pc_in(pc_exe),
-        .pc(pc_exe_reg)
+        .ALU_res_in(ALU_res_EXE),
+        .WB_EN_in(WB_EN_ID_Reg),
+        .Mem_R_EN_in(MEM_R_EN_ID_Reg),
+        .Mem_W_EN_in(MEM_W_EN_ID_Reg),
+        .dest_in(dest_ID_Reg),
+        .Val_Rm_in(Val_Rm_ID_Reg),
+
+        .ALU_res(ALU_res_EXE_Reg),
+        .Val_Rm(Val_Rm_EXE_Reg),
+        .WB_EN(WB_EN_EXE_Reg),
+        .Mem_R_EN(MEM_R_EN_EXE_Reg),
+        .Mem_W_EN(MEM_W_EN_EXE_Reg),
+        .dest(dest_EXE_Reg)
     );
 
     ///////////////////////////////////////////////////// MEM
@@ -189,24 +213,37 @@ module ARM (
     MEM_Stage mem_st (
         .clk(clk),
         .rst(rst),
-        .pc_in(pc_exe_reg),
-        .pc(pc_mem)
+        .ALU_res(ALU_res_EXE_Reg),
+        .Val_Rm(Val_Rm_EXE_Reg),
+        .Mem_R_EN(MEM_R_EN_EXE_Reg),
+        .Mem_W_EN(MEM_W_EN_EXE_Reg),
+
+        .Mem_Data(Mem_Data_MEM)
     );
 
     MEM_Reg mem_re (
         .clk(clk),
         .rst(rst),
-        .pc_in(pc_mem),
-        .pc(pc_mem_reg)
+        .ALU_res_in(ALU_res_EXE_Reg),
+        .Mem_R_EN_in(MEM_R_EN_EXE_Reg),
+        .WB_EN_in(WB_EN_EXE_Reg),
+        .dest_in(dest_EXE_Reg),
+        .Mem_Data_in(Mem_Data_MEM),
+    
+        .ALU_res(ALU_res_MEM_Reg),
+        .Mem_R_EN(MEM_R_EN_MEM_Reg),
+        .WB_EN(WB_WB_EN),
+        .dest(WB_Dest),
+        .Mem_Data(Mem_Data_MEM_Reg)
     );
 
     ///////////////////////////////////////////////////// WB
 
     WB_Stage wb_st (
-        .clk(clk),
-        .rst(rst),
-        .pc_in(pc_mem_reg),
-        .pc(pc_wb)
+        .ALU_res(ALU_res_MEM_Reg),
+        .Mem_Data(Mem_Data_MEM_Reg),
+        .MEM_R_EN(MEM_R_EN_MEM_Reg),
+        .result(WB_value)
     );
 
 endmodule

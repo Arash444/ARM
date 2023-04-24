@@ -217,7 +217,7 @@ module ARM (
         .Mem_R_EN(MEM_R_EN_EXE_Reg),
         .Mem_W_EN(MEM_W_EN_EXE_Reg),
 
-        .Mem_Data(Mem_Data_MEM)
+        .data_mem(Mem_Data_MEM)
     );
 
     MEM_Reg mem_re (

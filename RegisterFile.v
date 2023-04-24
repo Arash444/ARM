@@ -53,7 +53,6 @@ module RegisterFile (
         end
         else begin
             if (writeBackEn) begin
-                if (Dest_wb != 4'd0)
                     regFile[Dest_wb] <= Result_wb;
             end
         end

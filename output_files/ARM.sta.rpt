@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ARM
-Sat Mar 04 10:58:43 2023
+Wed May 03 14:25:53 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -232,9 +232,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 122   ; 122  ;
-; Unconstrained Output Ports      ; 16    ; 16   ;
-; Unconstrained Output Port Paths ; 16    ; 16   ;
+; Unconstrained Input Port Paths  ; 2896  ; 2896 ;
+; Unconstrained Output Ports      ; 27    ; 27   ;
+; Unconstrained Output Port Paths ; 81    ; 81   ;
 +---------------------------------+-------+------+
 
 
@@ -244,7 +244,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Mar 04 10:58:42 2023
+    Info: Processing started: Wed May 03 14:25:49 2023
 Info: Command: quartus_sta ARM -c ARM
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -255,6 +255,31 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): create_clock -name altera_reserved_tck [get_ports {altera_reserved_tck}] -period 10MHz   
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'ARM.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (332125): Found combinational loop of 24 nodes
+    Warning (332126): Node "AR|id_st|Mux_CU_out|out[1]~1|combout"
+    Warning (332126): Node "AR|id_st|Mux_CU_out|out[6]~4|datab"
+    Warning (332126): Node "AR|id_st|Mux_CU_out|out[6]~4|combout"
+    Warning (332126): Node "AR|HDU|Hazard~2|datac"
+    Warning (332126): Node "AR|HDU|Hazard~2|combout"
+    Warning (332126): Node "AR|HDU|Hazard~5|datac"
+    Warning (332126): Node "AR|HDU|Hazard~5|combout"
+    Warning (332126): Node "AR|id_st|Mux_CU_out|out[1]~1|datac"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[3]~3|datad"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[3]~3|combout"
+    Warning (332126): Node "AR|HDU|Hazard~1|datac"
+    Warning (332126): Node "AR|HDU|Hazard~1|combout"
+    Warning (332126): Node "AR|HDU|Hazard~2|datab"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[2]~4|dataa"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[2]~4|combout"
+    Warning (332126): Node "AR|HDU|Hazard~1|dataa"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[1]~1|datad"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[1]~1|combout"
+    Warning (332126): Node "AR|HDU|Hazard~0|dataa"
+    Warning (332126): Node "AR|HDU|Hazard~0|combout"
+    Warning (332126): Node "AR|HDU|Hazard~2|datad"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[0]~2|dataa"
+    Warning (332126): Node "AR|id_st|Mux_src2|out[0]~2|combout"
+    Warning (332126): Node "AR|HDU|Hazard~0|datac"
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
@@ -281,10 +306,10 @@ Info (332146): Worst-case minimum pulse width slack is 97.778
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4622 megabytes
-    Info: Processing ended: Sat Mar 04 10:58:43 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4688 megabytes
+    Info: Processing ended: Wed May 03 14:25:53 2023
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

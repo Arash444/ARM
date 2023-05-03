@@ -32,8 +32,17 @@ module ARM (
         status_c,
         status_n,
         status_v,
-        tempC,
-        Two_src;
+        C_ID_REG,
+        Two_src,
+        tempC, 
+        tempZ, 
+        tempN, 
+        tempV,
+        Forward_EN;
+
+    wire [1:0]
+        sel_src1,
+        sel_src2;
 
     wire [3:0] 
         EXE_CMD_ID,
@@ -43,7 +52,10 @@ module ARM (
         dest_EXE_Reg,
         WB_Dest,
         src1_ID,
-        src2_ID;
+        src2_ID,
+        src1_ID_Reg,
+        src2_ID_Reg;
+
     wire [11:0] 
         shift_operand_ID,
         shift_operand_ID_Reg;
@@ -71,6 +83,7 @@ module ARM (
 
     assign flush = branch_taken;
     assign freeze = Hazard;
+    assign Forward_EN = 1'b1;
     
     ///////////////////////////////////////////////////// IF
 
@@ -105,6 +118,8 @@ module ARM (
         .src1(src1_ID),
         .src2(src2_ID),
         .Two_src(Two_src),
+        .Forward_EN(Forward_EN),
+        .EXE_MEM_R_EN(MEM_R_EN_ID_Reg),
         .Hazard(Hazard));
 
     ///////////////////////////////////////////////////// ID
@@ -156,12 +171,14 @@ module ARM (
         .shift_operand_in(shift_operand_ID),
         .signed_imm_24_in(signed_imm_24_ID),
         .dest_in(dest_ID),
+        .src1_in(src1_ID),
+        .src2_in(src2_ID),
 
         .WB_EN(WB_EN_ID_Reg),
         .Mem_R_EN(MEM_R_EN_ID_Reg),
         .Mem_W_EN(MEM_W_EN_ID_Reg),
         .EXE_CMD(EXE_CMD_ID_Reg),
-        .outC(tempC),
+        .outC(C_ID_REG),
         .B(branch_taken),
         .S(S_ID_Reg),
         .pc(pc_ID_Reg),
@@ -170,7 +187,9 @@ module ARM (
         .imm(imm_ID_Reg),
         .shift_operand(shift_operand_ID_Reg),
         .signed_imm_24(signed_imm_24_ID_Reg),
-        .dest(dest_ID_Reg)
+        .dest(dest_ID_Reg),
+        .src1(src1_ID_Reg),
+        .src2(src2_ID_Reg)
     );
 
     ///////////////////////////////////////////////////// EXE
@@ -181,20 +200,23 @@ module ARM (
         .Mem_R_EN(MEM_R_EN_ID_Reg),
         .Mem_W_EN(MEM_W_EN_ID_Reg),
         .EXE_CMD(EXE_CMD_ID_Reg),
-        .inC(tempC),
-        .S(S_ID_Reg),
+        .inC(C_ID_REG),
         .pc(pc_ID_Reg),
         .Val1(Val_Rn_ID_Reg),
         .Val_Rm(Val_Rm_ID_Reg),
         .imm(imm_ID_Reg),
         .shift_operand(shift_operand_ID_Reg),
         .signed_imm_24(signed_imm_24_ID_Reg),
+        .sel_src1(sel_src1),
+        .sel_src2(sel_src2),
+        .ALU_MEM_forward(ALU_res_EXE_Reg),
+        .ALU_WB_forward(WB_value),
 
         .ALU_res(ALU_res_EXE),
-        .outN(status_n),
-        .outZ(status_z),
-        .outC(status_c),
-        .outV(status_v),
+        .outN(tempN),
+        .outZ(tempZ),
+        .outC(tempC),
+        .outV(tempV),
         .Branch_Address(branch_addr)
     );
 
@@ -215,8 +237,39 @@ module ARM (
         .Mem_W_EN(MEM_W_EN_EXE_Reg),
         .dest(dest_EXE_Reg)
     );
+    ///////////////////////////////////////////////////// STATUS REGISTER
 
-    ///////////////////////////////////////////////////// MEM
+    StatusRegister SR(
+        .clk(clk),
+        .rst(rst),
+        .S(S_ID_Reg),
+        .inN(tempN),
+        .inZ(tempZ),
+        .inC(tempC),
+        .inV(tempV),
+        
+        .outN(status_n),
+        .outZ(status_z),
+        .outC(status_c),
+        .outV(status_v)
+        );
+
+    ///////////////////////////////////////////////////// FORWARDING UNIT
+
+    ForwardingUnit FU(
+        .src1(src1_ID_Reg),
+        .src2(src2_ID_Reg),
+        .Dest_Mem(dest_EXE_Reg), 
+        .Dest_WB(WB_Dest), 
+        .WB_EN_MEM(WB_EN_EXE_Reg),
+        .WB_EN_WB(WB_WB_EN),
+        .Forward_EN(Forward_EN),
+
+        .sel_src1(sel_src1),
+        .sel_src2(sel_src2)
+    );
+
+    ///////////////////////////////////////////// MEM
 
     MEM_Stage mem_st (
         .clk(clk),

@@ -53,7 +53,7 @@ module RegisterFile (
         end
         else begin
             if (writeBackEn) begin
-                    regFile[Dest_wb] <= Result_wb;
+                regFile[Dest_wb] <= Result_wb;
             end
         end
     end

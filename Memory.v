@@ -14,13 +14,13 @@ module memory (
 
     reg [31:0] memory [0:63];
 
-    always@(negedge clk, posedge rst) begin
+    always@(posedge clk, posedge rst) begin
         if(rst) begin
             for(i = 0; i < 64; i = i + 1) begin
                 memory[i] <= 32'b0;
             end
         end
-        if(MEM_W_EN)
+        else if(MEM_W_EN)
             memory[addr] <= Val_RM;
     end
 

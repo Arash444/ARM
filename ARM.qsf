@@ -472,22 +472,6 @@ set_location_assignment PIN_V24 -to GPIO_1[32]
 set_location_assignment PIN_V23 -to GPIO_1[33]
 set_location_assignment PIN_W25 -to GPIO_1[34]
 set_location_assignment PIN_W23 -to GPIO_1[35]
-set_global_assignment -name VERILOG_FILE Altera.V
-set_global_assignment -name VERILOG_FILE WB_Stage.v
-set_global_assignment -name VERILOG_FILE testbench.v
-set_global_assignment -name VERILOG_FILE PC.v
-set_global_assignment -name VERILOG_FILE Mux_2_1.v
-set_global_assignment -name VERILOG_FILE MEM_Stage.v
-set_global_assignment -name VERILOG_FILE MEM_Reg.v
-set_global_assignment -name VERILOG_FILE Instru_mem.v
-set_global_assignment -name VERILOG_FILE IF_Stage.v
-set_global_assignment -name VERILOG_FILE IF_Reg.v
-set_global_assignment -name VERILOG_FILE ID_Stage.v
-set_global_assignment -name VERILOG_FILE ID_Reg.v
-set_global_assignment -name VERILOG_FILE EXE_Stage.v
-set_global_assignment -name VERILOG_FILE EXE_Reg.v
-set_global_assignment -name VERILOG_FILE ARM.v
-set_global_assignment -name VERILOG_FILE Adder.v
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
@@ -495,7 +479,6 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE ../../../Quartus13/output_files/stp7.stp
-set_global_assignment -name SIGNALTAP_FILE ../../../Quartus13/output_files/stp7.stp
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to CLOCK_50 -section_id auto_signaltap_0
@@ -1099,4 +1082,30 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LE
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_LOWORD=6609" -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_CRC_HIWORD=50304" -section_id auto_signaltap_0
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE Val2Gen.v
+set_global_assignment -name VERILOG_FILE TB.v
+set_global_assignment -name VERILOG_FILE StatusRegister.v
+set_global_assignment -name VERILOG_FILE RegisterFile.v
+set_global_assignment -name VERILOG_FILE Memory.v
+set_global_assignment -name VERILOG_FILE HazardDetectionUnit.v
+set_global_assignment -name VERILOG_FILE ControlUnit.v
+set_global_assignment -name VERILOG_FILE Condition_Check.v
+set_global_assignment -name VERILOG_FILE ALU.v
+set_global_assignment -name VERILOG_FILE Altera.V
+set_global_assignment -name VERILOG_FILE WB_Stage.v
+set_global_assignment -name VERILOG_FILE testbench.v
+set_global_assignment -name VERILOG_FILE PC.v
+set_global_assignment -name VERILOG_FILE Mux_2_1.v
+set_global_assignment -name VERILOG_FILE MEM_Stage.v
+set_global_assignment -name VERILOG_FILE MEM_Reg.v
+set_global_assignment -name VERILOG_FILE Instru_mem.v
+set_global_assignment -name VERILOG_FILE IF_Stage.v
+set_global_assignment -name VERILOG_FILE IF_Reg.v
+set_global_assignment -name VERILOG_FILE ID_Stage.v
+set_global_assignment -name VERILOG_FILE ID_Reg.v
+set_global_assignment -name VERILOG_FILE EXE_Stage.v
+set_global_assignment -name VERILOG_FILE EXE_Reg.v
+set_global_assignment -name VERILOG_FILE ARM.v
+set_global_assignment -name VERILOG_FILE Adder.v
+set_global_assignment -name SIGNALTAP_FILE ../../../Quartus13/output_files/stp7.stp
 set_global_assignment -name SLD_FILE "C:/Quartus13/output_files/stp7_auto_stripped.stp"

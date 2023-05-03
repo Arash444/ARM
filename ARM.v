@@ -1,11 +1,11 @@
 module ARM (
     clk,
-    rst
+    rst, 
+    WB_value
 );
     
-    input
-        clk,
-        rst;
+    input clk, rst;
+    output [31:0] WB_value;
 
     wire 
         freeze,
@@ -54,7 +54,6 @@ module ARM (
         pc_if,
         pc_if_reg,
         pc_ID_Reg,
-        WB_value,
         instruction_if,
         instruction_if_reg,
         branch_addr,
@@ -69,12 +68,10 @@ module ARM (
         Mem_Data_MEM,
         Mem_Data_MEM_Reg;
 
-        
-    assign Hazard = 1'b0;
 
     assign flush = branch_taken;
     assign freeze = Hazard;
-
+    
     ///////////////////////////////////////////////////// IF
 
     IF_Stage if_st(
@@ -97,6 +94,18 @@ module ARM (
         .pc(pc_if_reg),
         .instruction(instruction_if_reg)
     );
+
+    ///////////////////////////////////////////////////// HAZZARD
+
+    HazardDetection HDU(
+        .MEM_Dest(dest_EXE_Reg),
+        .EXE_Dest(dest_ID_Reg),
+        .MEM_WB_EN(WB_EN_EXE_Reg),
+        .EXE_WB_EN(WB_EN_ID_Reg),
+        .src1(src1_ID),
+        .src2(src2_ID),
+        .Two_src(Two_src),
+        .Hazard(Hazard));
 
     ///////////////////////////////////////////////////// ID
 
@@ -130,7 +139,7 @@ module ARM (
     );
 
     ID_Reg id_re (
-        .clk(clk), 
+        .clk(clk),
         .rst(rst),
         .flush(flush),
         .WB_EN_in(WB_EN_ID),

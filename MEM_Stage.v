@@ -13,7 +13,7 @@ module MEM_Stage (
     output [31:0] data_mem;
     
     wire [31:0] addr;
-    assign addr = (ALU_res - 32'd1024) >> 2;
+    assign addr = (ALU_res - 32'd1024) >> 1;
 
     memory DM(
         .clk(clk),

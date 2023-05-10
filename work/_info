@@ -10,379 +10,379 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 vAdder
-Z0 !s110 1683054776
+!s110 1683715863
 !i10b 1
 !s100 8<T4BM_PoQ[``z<gSX1le2
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I_ISU_88h;<3]f9g<ion8W3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dH:/University/Term 6/CA Lab/ARM-main
-Z4 w1680158560
-8H:/University/Term 6/CA Lab/ARM-main/Adder.v
-FH:/University/Term 6/CA Lab/ARM-main/Adder.v
-!i122 622
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>Cj`5RMKh9E_`Y68j5jaj1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/project/ARM
+Z3 w1680154960
+8C:/project/ARM/Adder.v
+FC:/project/ARM/Adder.v
+!i122 651
 L0 1 12
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1683054775.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/Adder.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Adder.v|
+!s108 1683715862.000000
+!s107 C:/project/ARM/Adder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Adder.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@adder
 vAltera
-R0
+!s110 1683715864
 !i10b 1
 !s100 o9BB?81>=NcK7z=@`g=Yc0
+R0
+IchdIg6i3_ioI8^8?Qg[JW3
 R1
-INMj`lWmeiT@BEmfZEad5b1
 R2
-R3
-w1681894985
-8H:/University/Term 6/CA Lab/ARM-main/Altera.V
-FH:/University/Term 6/CA Lab/ARM-main/Altera.V
-!i122 623
+w1681891385
+8C:/project/ARM/Altera.V
+FC:/project/ARM/Altera.V
+!i122 652
 L0 48 265
-R5
+R4
 r1
 !s85 0
 31
-Z8 !s108 1683054776.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/Altera.V|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Altera.V|
+!s108 1683715863.000000
+!s107 C:/project/ARM/Altera.V|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Altera.V|
 !i113 1
+R5
 R6
-R7
 n@altera
 vALU
-Z9 !s110 1683054777
+Z7 !s110 1683054777
 !i10b 1
 !s100 n:T3eF5`9WkhJ^RY4TmD@1
-R1
+R0
 IkWLAhRD3VOo?^86l>6FZ[3
-R2
-R3
+R1
+Z8 dH:/University/Term 6/CA Lab/ARM-main
 w1683052072
 8H:/University/Term 6/CA Lab/ARM-main/ALU.v
 FH:/University/Term 6/CA Lab/ARM-main/ALU.v
 !i122 624
 L0 1 92
-R5
+R4
 r1
 !s85 0
 31
-R8
+!s108 1683054776.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/ALU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ALU.v|
 !i113 1
+R5
 R6
-R7
 n@a@l@u
 vARM
-Z10 !s110 1683055475
+!s110 1683715865
 !i10b 1
 !s100 P1lJ@`7M`eU]1>U1DGm^j2
+R0
+IA^@c3BzAcDN^7cTnUMCR;1
 R1
-IXCA`FzcULzNFI6@Q<JQ7G2
 R2
-R3
-w1683055465
-8H:/University/Term 6/CA Lab/ARM-main/ARM.v
-FH:/University/Term 6/CA Lab/ARM-main/ARM.v
-!i122 648
+w1683051865
+8C:/project/ARM/ARM.v
+FC:/project/ARM/ARM.v
+!i122 653
 L0 1 310
-R5
+R4
 r1
 !s85 0
 31
-Z11 !s108 1683055475.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/ARM.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ARM.v|
+!s108 1683715864.000000
+!s107 C:/project/ARM/ARM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ARM.v|
 !i113 1
+R5
 R6
-R7
 n@a@r@m
 vCondition_Check
-R9
+!s110 1683715883
 !i10b 1
 !s100 beiOBCN^lYAE8j7:mD=m83
+R0
+IjZWjh95AgO=im698NnE?43
 R1
-IUGK]Ok@hSNgPPn89XQoDL3
 R2
 R3
+8C:/project/ARM/Condition_Check.v
+FC:/project/ARM/Condition_Check.v
+!i122 670
+Z9 L0 1 37
 R4
-8H:/University/Term 6/CA Lab/ARM-main/Condition_Check.v
-FH:/University/Term 6/CA Lab/ARM-main/Condition_Check.v
-!i122 626
-Z12 L0 1 37
-R5
 r1
 !s85 0
 31
-Z13 !s108 1683054777.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/Condition_Check.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Condition_Check.v|
+!s108 1683715882.000000
+!s107 C:/project/ARM/Condition_Check.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Condition_Check.v|
 !i113 1
+R5
 R6
-R7
 n@condition_@check
 vControlUnit
-R9
+!s110 1683715866
 !i10b 1
 !s100 RI?5628dCRLz1SUD?@BYD0
+R0
+INQ:mQg@OmkUBKgRIf]Xzn3
 R1
-IkR?G::LMV`lgBG<lO7`U01
 R2
 R3
-R4
-8H:/University/Term 6/CA Lab/ARM-main/ControlUnit.v
-FH:/University/Term 6/CA Lab/ARM-main/ControlUnit.v
-!i122 627
+8C:/project/ARM/ControlUnit.v
+FC:/project/ARM/ControlUnit.v
+!i122 654
 L0 1 70
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 H:/University/Term 6/CA Lab/ARM-main/ControlUnit.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ControlUnit.v|
+!s108 1683715865.000000
+!s107 C:/project/ARM/ControlUnit.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ControlUnit.v|
 !i113 1
+R5
 R6
-R7
 n@control@unit
 vEXE_Reg
-R9
+!s110 1683715867
 !i10b 1
 !s100 BB9;`m8hZ<o1m[G31S]XS3
+R0
+I615VOg<eOVcNkXAl>EY8M1
 R1
-I[We^^c4gLFE:cDZLbglK10
 R2
-R3
-w1680687670
-8H:/University/Term 6/CA Lab/ARM-main/EXE_Reg.v
-FH:/University/Term 6/CA Lab/ARM-main/EXE_Reg.v
-!i122 628
+w1680684070
+8C:/project/ARM/EXE_Reg.v
+FC:/project/ARM/EXE_Reg.v
+!i122 655
 L0 1 41
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 H:/University/Term 6/CA Lab/ARM-main/EXE_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/EXE_Reg.v|
+!s108 1683715866.000000
+!s107 C:/project/ARM/EXE_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/EXE_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@e@x@e_@reg
 vEXE_Stage
-R9
+!s110 1683715868
 !i10b 1
 !s100 I^U35T9k[AVUhi0EQ3eYh2
+R0
+I8e=zLA:b:k^81Chkoj<8k3
 R1
-IhLFR=7?SznRh8<3>VGN[Q0
 R2
-R3
-w1682883307
-8H:/University/Term 6/CA Lab/ARM-main/EXE_Stage.v
-FH:/University/Term 6/CA Lab/ARM-main/EXE_Stage.v
-!i122 629
+w1682879707
+8C:/project/ARM/EXE_Stage.v
+FC:/project/ARM/EXE_Stage.v
+!i122 656
 L0 1 84
-R5
+R4
 r1
 !s85 0
 31
-R13
-!s107 H:/University/Term 6/CA Lab/ARM-main/EXE_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/EXE_Stage.v|
+!s108 1683715867.000000
+!s107 C:/project/ARM/EXE_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/EXE_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@e@x@e_@stage
 vForwardingUnit
-R10
+!s110 1683055475
 !i10b 1
 !s100 O^elW9H8`8cNFmW@RU8Io1
-R1
+R0
 I]Cj9<l?cC8iZQHO?Y6Nf?2
-R2
-R3
+R1
+R8
 w1683055453
 8H:/University/Term 6/CA Lab/ARM-main/ForwardingUnit.v
 FH:/University/Term 6/CA Lab/ARM-main/ForwardingUnit.v
 !i122 649
 L0 1 31
-R5
+R4
 r1
 !s85 0
 31
-R11
+!s108 1683055475.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/ForwardingUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ForwardingUnit.v|
 !i113 1
+R5
 R6
-R7
 n@forwarding@unit
 vHazardDetection
-R9
+R7
 !i10b 1
 !s100 djBGePoVG>f;InCk_akZh1
-R1
+R0
 IOTg^=PYaeb`j6mBl@5DIS1
-R2
-R3
+R1
+R8
 w1683053933
 8H:/University/Term 6/CA Lab/ARM-main/HazardDetectionUnit.v
 FH:/University/Term 6/CA Lab/ARM-main/HazardDetectionUnit.v
 !i122 630
 L0 1 34
-R5
+R4
 r1
 !s85 0
 31
-R13
+!s108 1683054777.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/HazardDetectionUnit.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/HazardDetectionUnit.v|
 !i113 1
+R5
 R6
-R7
 n@hazard@detection
 vID_Reg
-!s110 1683054886
+!s110 1683715870
 !i10b 1
 !s100 e7Q@F8Q[?Qg9@l17T]m203
+R0
+IIR6iB?3oMUHiKz:Y[k?NB3
 R1
-IVM9l4RFnofhFha;N0MSMb0
 R2
-R3
-w1683054882
-8H:/University/Term 6/CA Lab/ARM-main/ID_Reg.v
-FH:/University/Term 6/CA Lab/ARM-main/ID_Reg.v
-!i122 646
+w1683051282
+8C:/project/ARM/ID_Reg.v
+FC:/project/ARM/ID_Reg.v
+!i122 657
 L0 1 108
-R5
+R4
 r1
 !s85 0
 31
-!s108 1683054886.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/ID_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ID_Reg.v|
+!s108 1683715869.000000
+!s107 C:/project/ARM/ID_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ID_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@i@d_@reg
 vID_Stage
-Z14 !s110 1683054778
+!s110 1683715871
 !i10b 1
 !s100 9=lM1>Y`3[Semb;hohZ7^0
+R0
+I]<Cd:GFcARB5ZJ2TzLRgT1
 R1
-Io^:j4Oj1iLYU3Y[TITa@Y0
 R2
 R3
-R4
-8H:/University/Term 6/CA Lab/ARM-main/ID_Stage.v
-FH:/University/Term 6/CA Lab/ARM-main/ID_Stage.v
-!i122 631
+8C:/project/ARM/ID_Stage.v
+FC:/project/ARM/ID_Stage.v
+!i122 658
 L0 1 145
-R5
+R4
 r1
 !s85 0
 31
-Z15 !s108 1683054778.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/ID_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/ID_Stage.v|
+!s108 1683715870.000000
+!s107 C:/project/ARM/ID_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/ID_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@i@d_@stage
 vIF_Reg
-R14
+!s110 1683715872
 !i10b 1
 !s100 jEn[^9jR?zN@:ED;JQ0eR1
+R0
+IX3dQIUm3C:0;JA5NE0C;X2
 R1
-I]YKGnc91[``K69ogmXDK@2
 R2
 R3
+8C:/project/ARM/IF_Reg.v
+FC:/project/ARM/IF_Reg.v
+!i122 659
+Z10 L0 1 27
 R4
-8H:/University/Term 6/CA Lab/ARM-main/IF_Reg.v
-FH:/University/Term 6/CA Lab/ARM-main/IF_Reg.v
-!i122 632
-Z16 L0 1 27
-R5
 r1
 !s85 0
 31
-R15
-!s107 H:/University/Term 6/CA Lab/ARM-main/IF_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/IF_Reg.v|
+!s108 1683715871.000000
+!s107 C:/project/ARM/IF_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/IF_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@i@f_@reg
 vIF_Stage
-R14
+!s110 1683715873
 !i10b 1
 !s100 zb1fGLlZXezeeLeXEH6:l1
+R0
+I^32<bUfQ2[2^niYeQXXE70
 R1
-I<BIZTn8eR0G1JI2WQLOV90
 R2
 R3
-R4
-8H:/University/Term 6/CA Lab/ARM-main/IF_Stage.v
-FH:/University/Term 6/CA Lab/ARM-main/IF_Stage.v
-!i122 633
+8C:/project/ARM/IF_Stage.v
+FC:/project/ARM/IF_Stage.v
+!i122 660
 L0 1 45
-R5
+R4
 r1
 !s85 0
 31
-R15
-!s107 H:/University/Term 6/CA Lab/ARM-main/IF_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/IF_Stage.v|
+!s108 1683715872.000000
+!s107 C:/project/ARM/IF_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/IF_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@i@f_@stage
 vInstru_mem
-R14
+!s110 1683715874
 !i10b 1
 !s100 kA9VMl8g]7@G:>:Yo5;<P0
+R0
+Ikm^BJ54[LG[om4:0CJT;51
 R1
-I_=PAK_Za<C<`V>a8zFkUT1
 R2
-R3
-w1682848467
-8H:/University/Term 6/CA Lab/ARM-main/Instru_mem.v
-FH:/University/Term 6/CA Lab/ARM-main/Instru_mem.v
-!i122 634
-Z17 L0 1 62
-R5
+w1682844867
+8C:/project/ARM/Instru_mem.v
+FC:/project/ARM/Instru_mem.v
+!i122 661
+Z11 L0 1 62
+R4
 r1
 !s85 0
 31
-R15
-!s107 H:/University/Term 6/CA Lab/ARM-main/Instru_mem.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Instru_mem.v|
+!s108 1683715873.000000
+!s107 C:/project/ARM/Instru_mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Instru_mem.v|
 !i113 1
+R5
 R6
-R7
 n@instru_mem
 vinstruru_mem
 !s110 1681896447
 !i10b 1
 !s100 >Pfo8E4:_:63SdkjI;OF[2
-R1
+R0
 IE5QAoh0?DD5:G73bHQ^]k2
-R2
+R1
 dC:/University/CA Lab/ARM-main
 w1681895949
 8C:/University/CA Lab/ARM-main/Instru_mem.v
 FC:/University/CA Lab/ARM-main/Instru_mem.v
 !i122 501
 L0 1 64
-R5
+R4
 r1
 !s85 0
 31
@@ -390,117 +390,117 @@ r1
 !s107 C:/University/CA Lab/ARM-main/Instru_mem.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/University/CA Lab/ARM-main/Instru_mem.v|
 !i113 1
+R5
 R6
-R7
 vMEM_Reg
-R14
+!s110 1683715875
 !i10b 1
 !s100 P953enj:_Cc]Rng?BPo]f3
+R0
+IX1eIL`RXaZVA<z]KVN>3o2
 R1
-IQk;fH[=^7KNncTMcb5_jW3
 R2
-R3
-w1680864910
-8H:/University/Term 6/CA Lab/ARM-main/MEM_Reg.v
-FH:/University/Term 6/CA Lab/ARM-main/MEM_Reg.v
-!i122 635
-R12
-R5
+w1680861310
+8C:/project/ARM/MEM_Reg.v
+FC:/project/ARM/MEM_Reg.v
+!i122 662
+R9
+R4
 r1
 !s85 0
 31
-R15
-!s107 H:/University/Term 6/CA Lab/ARM-main/MEM_Reg.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/MEM_Reg.v|
+!s108 1683715874.000000
+!s107 C:/project/ARM/MEM_Reg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Reg.v|
 !i113 1
+R5
 R6
-R7
 n@m@e@m_@reg
 vMEM_Stage
-R14
+!s110 1683718476
 !i10b 1
-!s100 VdIeJhcI9>f2[5Z2egF5:2
+!s100 ]1kC5h`^Jd2<QPmnP03]P3
+R0
+IA[BnzOBQNgA_I71Fl>DNb0
 R1
-IS9GdS`KZ7n122bDF`S<0m0
 R2
-R3
-w1681898176
-8H:/University/Term 6/CA Lab/ARM-main/MEM_Stage.v
-FH:/University/Term 6/CA Lab/ARM-main/MEM_Stage.v
-!i122 636
-R16
-R5
+w1683717123
+8C:/project/ARM/MEM_Stage.v
+FC:/project/ARM/MEM_Stage.v
+!i122 672
+R10
+R4
 r1
 !s85 0
 31
-R15
-!s107 H:/University/Term 6/CA Lab/ARM-main/MEM_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/MEM_Stage.v|
+!s108 1683718475.000000
+!s107 C:/project/ARM/MEM_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@m@e@m_@stage
 vmemory
-R14
+!s110 1683054778
 !i10b 1
 !s100 h2oGPRN_=zoL=ocG8HRl03
-R1
+R0
 I9A89TFMo^5Q<b]OlBg`@z1
-R2
-R3
+R1
+R8
 w1682500431
 8H:/University/Term 6/CA Lab/ARM-main/Memory.v
 FH:/University/Term 6/CA Lab/ARM-main/Memory.v
 !i122 637
-Z18 L0 1 32
-R5
+Z12 L0 1 32
+R4
 r1
 !s85 0
 31
-R15
+!s108 1683054778.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/Memory.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Memory.v|
 !i113 1
+R5
 R6
-R7
 vMux_2_1
-Z19 !s110 1683054781
+!s110 1683715877
 !i10b 1
 !s100 e0Pl39CR_1]Q0VH>:_2ed2
+R0
+IZ9UBYPkM]KaazIXQF_25Y3
 R1
-IjgCGfOP`1Sj2`jU]AXlkj2
 R2
 R3
-R4
-8H:/University/Term 6/CA Lab/ARM-main/Mux_2_1.v
-FH:/University/Term 6/CA Lab/ARM-main/Mux_2_1.v
-!i122 638
+8C:/project/ARM/Mux_2_1.v
+FC:/project/ARM/Mux_2_1.v
+!i122 664
 L0 1 15
-R5
+R4
 r1
 !s85 0
 31
-Z20 !s108 1683054781.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/Mux_2_1.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Mux_2_1.v|
+!s108 1683715876.000000
+!s107 C:/project/ARM/Mux_2_1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Mux_2_1.v|
 !i113 1
+R5
 R6
-R7
 n@mux_2_1
 vMux_3_1
 !s110 1683056258
 !i10b 1
 !s100 g[VX?PH6SA@2knN]L6g_01
-R1
+R0
 Ig2dPBTkgzGn9bU[TMe7m]1
-R2
-R3
+R1
+R8
 w1683056251
 8H:/University/Term 6/CA Lab/ARM-main/Mux_3-1.v
 FH:/University/Term 6/CA Lab/ARM-main/Mux_3-1.v
 !i122 650
 L0 1 16
-R5
+R4
 r1
 !s85 0
 31
@@ -508,173 +508,197 @@ r1
 !s107 H:/University/Term 6/CA Lab/ARM-main/Mux_3-1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Mux_3-1.v|
 !i113 1
+R5
 R6
-R7
 n@mux_3_1
 vPC
-R19
+!s110 1683715878
 !i10b 1
 !s100 TmX]Td?V1UeEHCc;mfEUV3
+R0
+IR1TIo`3c3Pk:dAXnO^gJ=1
 R1
-I8]h=Lbech[[nihLc4G`Wc2
 R2
 R3
-R4
-8H:/University/Term 6/CA Lab/ARM-main/PC.v
-FH:/University/Term 6/CA Lab/ARM-main/PC.v
-!i122 639
+8C:/project/ARM/PC.v
+FC:/project/ARM/PC.v
+!i122 665
 L0 1 22
-R5
+R4
 r1
 !s85 0
 31
-R20
-!s107 H:/University/Term 6/CA Lab/ARM-main/PC.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/PC.v|
+!s108 1683715877.000000
+!s107 C:/project/ARM/PC.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/PC.v|
 !i113 1
+R5
 R6
-R7
 n@p@c
 vRegisterFile
-Z21 !s110 1683054782
+!s110 1683715882
 !i10b 1
 !s100 [2H<T?BjAWb2HDNIELQ3I0
+R0
+ISKP8Pj5c=cJ[_X>9M:U503
 R1
-I7eG>f6@N8mg7b5ThO_ZH92
 R2
-R3
-w1681900560
-8H:/University/Term 6/CA Lab/ARM-main/RegisterFile.v
-FH:/University/Term 6/CA Lab/ARM-main/RegisterFile.v
-!i122 640
-R17
-R5
+w1681896960
+8C:/project/ARM/RegisterFile.v
+FC:/project/ARM/RegisterFile.v
+!i122 669
+R11
+R4
 r1
 !s85 0
 31
-R20
-!s107 H:/University/Term 6/CA Lab/ARM-main/RegisterFile.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/RegisterFile.v|
+!s108 1683715881.000000
+!s107 C:/project/ARM/RegisterFile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/RegisterFile.v|
 !i113 1
+R5
 R6
-R7
 n@register@file
+vSRAMController
+!s110 1683719374
+!i10b 1
+!s100 SN<kb2PWZ`Cn=jjVU90m@0
+R0
+I3b0E;Rin_b5NRHMMzQj2o3
+R1
+R2
+w1683719368
+8C:/project/ARM/SRAMController.v
+FC:/project/ARM/SRAMController.v
+!i122 675
+L0 1 172
+R4
+r1
+!s85 0
+31
+!s108 1683719373.000000
+!s107 C:/project/ARM/SRAMController.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
+!i113 1
+R5
+R6
+n@s@r@a@m@controller
 vStatusRegister
-R21
+Z13 !s110 1683054782
 !i10b 1
 !s100 =MdO2^B:[dAhBmTDlFL8L3
-R1
+R0
 I4J>AP[W_^bf^9C_EB0==X0
-R2
-R3
+R1
+R8
 w1681898918
 8H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v
 FH:/University/Term 6/CA Lab/ARM-main/StatusRegister.v
 !i122 641
-R18
-R5
+R12
+R4
 r1
 !s85 0
 31
-Z22 !s108 1683054782.000000
+Z14 !s108 1683054782.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v|
 !i113 1
+R5
 R6
-R7
 n@status@register
 vTB
-R21
+!s110 1683715879
 !i10b 1
 !s100 l0fFXQ`[FYBQYzD?:N7I:2
+R0
+IA49h9jz<QTz]jSd@^0Dog3
 R1
-II`8d>E^]O@?L1Q[l]aBjl3
 R2
-R3
-w1682840229
-8H:/University/Term 6/CA Lab/ARM-main/TB.v
-FH:/University/Term 6/CA Lab/ARM-main/TB.v
-!i122 642
+w1682836629
+8C:/project/ARM/TB.v
+FC:/project/ARM/TB.v
+!i122 666
 L0 1 13
-R5
+R4
 r1
 !s85 0
 31
-R22
-!s107 H:/University/Term 6/CA Lab/ARM-main/TB.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/TB.v|
+!s108 1683715878.000000
+!s107 C:/project/ARM/TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/TB.v|
 !i113 1
+R5
 R6
-R7
 n@t@b
 vtestbench
-!s110 1682881628
+!s110 1683715880
 !i10b 1
 !s100 OXUS9:deabXdj2DmMLghJ0
+R0
+IbgkL@n?H`YOE@E[DDICXX0
 R1
-I7@b4aWi:n=B^818LYnbaT2
 R2
-R3
 w1681895319
-8H:/University/Term 6/CA Lab/ARM-main/testbench.v
-FH:/University/Term 6/CA Lab/ARM-main/testbench.v
-!i122 617
-Z23 L0 1 14
-R5
+8C:/project/ARM/testbench.v
+FC:/project/ARM/testbench.v
+!i122 667
+Z15 L0 1 14
+R4
 r1
 !s85 0
 31
-!s108 1682881628.000000
-!s107 H:/University/Term 6/CA Lab/ARM-main/testbench.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/testbench.v|
+!s108 1683715879.000000
+!s107 C:/project/ARM/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/testbench.v|
 !i113 1
+R5
 R6
-R7
 vVal2Gen
-R21
+R13
 !i10b 1
 !s100 ob:K3J=UDCh[k96IQ?iUN2
-R1
+R0
 I;fCn2^8O89O8ldo3m2i7_1
-R2
-R3
+R1
+R8
 w1681541388
 8H:/University/Term 6/CA Lab/ARM-main/Val2Gen.v
 FH:/University/Term 6/CA Lab/ARM-main/Val2Gen.v
 !i122 643
 L0 1 46
-R5
+R4
 r1
 !s85 0
 31
-R22
+R14
 !s107 H:/University/Term 6/CA Lab/ARM-main/Val2Gen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Val2Gen.v|
 !i113 1
+R5
 R6
-R7
 n@val2@gen
 vWB_Stage
-R21
+!s110 1683715881
 !i10b 1
 !s100 dbkGB28UMbW]>ED^gNTL;2
+R0
+Ie0^ljj@]h4LaNoP39GAQV0
 R1
-I`8OI^L`PzFzOVSTbk=afa3
 R2
-R3
-w1681540276
-8H:/University/Term 6/CA Lab/ARM-main/WB_Stage.v
-FH:/University/Term 6/CA Lab/ARM-main/WB_Stage.v
-!i122 644
-R23
-R5
+w1681536676
+8C:/project/ARM/WB_Stage.v
+FC:/project/ARM/WB_Stage.v
+!i122 668
+R15
+R4
 r1
 !s85 0
 31
-R22
-!s107 H:/University/Term 6/CA Lab/ARM-main/WB_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/WB_Stage.v|
+!s108 1683715880.000000
+!s107 C:/project/ARM/WB_Stage.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/WB_Stage.v|
 !i113 1
+R5
 R6
-R7
 n@w@b_@stage

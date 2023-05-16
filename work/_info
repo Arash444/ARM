@@ -106,7 +106,7 @@ R5
 R6
 n@a@r@m
 vCondition_Check
-!s110 1683715883
+!s110 1683720122
 !i10b 1
 !s100 beiOBCN^lYAE8j7:mD=m83
 R0
@@ -116,13 +116,13 @@ R2
 R3
 8C:/project/ARM/Condition_Check.v
 FC:/project/ARM/Condition_Check.v
-!i122 670
+!i122 676
 Z9 L0 1 37
 R4
 r1
 !s85 0
 31
-!s108 1683715882.000000
+!s108 1683720121.000000
 !s107 C:/project/ARM/Condition_Check.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Condition_Check.v|
 !i113 1
@@ -309,7 +309,7 @@ R3
 8C:/project/ARM/IF_Reg.v
 FC:/project/ARM/IF_Reg.v
 !i122 659
-Z10 L0 1 27
+L0 1 27
 R4
 r1
 !s85 0
@@ -357,7 +357,7 @@ w1682844867
 8C:/project/ARM/Instru_mem.v
 FC:/project/ARM/Instru_mem.v
 !i122 661
-Z11 L0 1 62
+Z10 L0 1 62
 R4
 r1
 !s85 0
@@ -417,23 +417,23 @@ R5
 R6
 n@m@e@m_@reg
 vMEM_Stage
-!s110 1683718476
+!s110 1683720130
 !i10b 1
-!s100 ]1kC5h`^Jd2<QPmnP03]P3
+!s100 _ZTiO?8Hb9a`I9b<0RkGZ1
 R0
-IA[BnzOBQNgA_I71Fl>DNb0
+IF0eXb_SJ[<eA]lK:L0]Yd1
 R1
 R2
-w1683717123
+w1683719785
 8C:/project/ARM/MEM_Stage.v
 FC:/project/ARM/MEM_Stage.v
-!i122 672
-R10
+!i122 677
+L0 1 54
 R4
 r1
 !s85 0
 31
-!s108 1683718475.000000
+!s108 1683720129.000000
 !s107 C:/project/ARM/MEM_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
@@ -452,7 +452,7 @@ w1682500431
 8H:/University/Term 6/CA Lab/ARM-main/Memory.v
 FH:/University/Term 6/CA Lab/ARM-main/Memory.v
 !i122 637
-Z12 L0 1 32
+Z11 L0 1 32
 R4
 r1
 !s85 0
@@ -547,7 +547,7 @@ w1681896960
 8C:/project/ARM/RegisterFile.v
 FC:/project/ARM/RegisterFile.v
 !i122 669
-R11
+R10
 R4
 r1
 !s85 0
@@ -584,7 +584,7 @@ R5
 R6
 n@s@r@a@m@controller
 vStatusRegister
-Z13 !s110 1683054782
+Z12 !s110 1683054782
 !i10b 1
 !s100 =MdO2^B:[dAhBmTDlFL8L3
 R0
@@ -595,12 +595,12 @@ w1681898918
 8H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v
 FH:/University/Term 6/CA Lab/ARM-main/StatusRegister.v
 !i122 641
-R12
+R11
 R4
 r1
 !s85 0
 31
-Z14 !s108 1683054782.000000
+Z13 !s108 1683054782.000000
 !s107 H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/StatusRegister.v|
 !i113 1
@@ -643,7 +643,7 @@ w1681895319
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 667
-Z15 L0 1 14
+Z14 L0 1 14
 R4
 r1
 !s85 0
@@ -655,7 +655,7 @@ r1
 R5
 R6
 vVal2Gen
-R13
+R12
 !i10b 1
 !s100 ob:K3J=UDCh[k96IQ?iUN2
 R0
@@ -671,7 +671,7 @@ R4
 r1
 !s85 0
 31
-R14
+R13
 !s107 H:/University/Term 6/CA Lab/ARM-main/Val2Gen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|H:/University/Term 6/CA Lab/ARM-main/Val2Gen.v|
 !i113 1
@@ -690,7 +690,7 @@ w1681536676
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 668
-R15
+R14
 R4
 r1
 !s85 0

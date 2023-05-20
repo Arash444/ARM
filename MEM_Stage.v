@@ -39,8 +39,8 @@ module MEM_Stage (
     assign addr = (ALU_res - 32'd1024) >> 1;
 
     Mux_2_1 #(1) MUXWB(
-        WB_EN_IN, 
         1'b0, 
+        WB_EN_IN, 
         Ready, 
         WB_EN_OUT);
 

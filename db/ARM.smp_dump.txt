@@ -1,0 +1,12 @@
+
+State Machine - |Altera|ARM:AR|MEM_Stage:mem_st|SRAMController:SC|ps
+Name ps.WAIT ps.READ_HIGH ps.ADDR_HIGH ps.ADDR_LOW ps.WRITE_WAIT ps.WRITE_HIGH ps.WRITE_LOW ps.IDLE ps.READY 
+ps.IDLE 0 0 0 0 0 0 0 0 0 
+ps.WRITE_LOW 0 0 0 0 0 0 1 1 0 
+ps.WRITE_HIGH 0 0 0 0 0 1 0 1 0 
+ps.WRITE_WAIT 0 0 0 0 1 0 0 1 0 
+ps.ADDR_LOW 0 0 0 1 0 0 0 1 0 
+ps.ADDR_HIGH 0 0 1 0 0 0 0 1 0 
+ps.READ_HIGH 0 1 0 0 0 0 0 1 0 
+ps.WAIT 1 0 0 0 0 0 0 1 0 
+ps.READY 0 0 0 0 0 0 0 1 1 

@@ -71,8 +71,6 @@ module ID_Stage (
     output [23:0]
         Signed_imm_24;
 
-
-
     wire
         S_CU, 
         B_CU, 

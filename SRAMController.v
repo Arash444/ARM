@@ -40,8 +40,12 @@ module SRAMController (
         ps, 
         ns;
 
-    reg [31:0]
-        temp_sram_data;
+    reg [15:0]
+        temp_sram_data,
+        next_read_high,
+        next_read_low,
+        present_read_high,
+        present_read_low;
 
     parameter [3:0]
         IDLE = 4'd0,
@@ -59,18 +63,17 @@ module SRAMController (
 
     assign SRAM_data = temp_sram_data;
 
-    always @(ps) begin
-        read_data <= 32'b0;
+    always @(ps, SRAM_data, present_read_high, present_read_low) begin
         case(ps)
             IDLE: read_data <= 32'b0;
             WRITE_LOW: read_data <= 32'b0;
             WRITE_HIGH: read_data <= 32'b0;
             WRITE_WAIT: read_data <= 32'b0;
             ADDR_LOW: read_data <= 32'b0;
-            ADDR_HIGH: read_data <= {16'b0, SRAM_data};
-            READ_HIGH: read_data <= {SRAM_data, read_data[15:0]};
-            WAIT: read_data <= read_data;
-            READY: read_data <= read_data;
+            ADDR_HIGH: next_read_high <= SRAM_data;
+            READ_HIGH: next_read_low <= SRAM_data;
+            WAIT: read_data <= {present_read_high, present_read_low};
+            default: read_data <= 32'b0;
         endcase
     end
 
@@ -96,7 +99,7 @@ module SRAMController (
             WRITE_HIGH: begin
                 SRAM_WE_N = 1'b0;
                 Ready = 1'b0;
-                addr = ALU_res[17:0] + 1;
+                addr = ALU_res[17:0] + 18'd1;
                 temp_sram_data = ST_Value[31:16];
             end
             WRITE_WAIT: begin
@@ -114,7 +117,7 @@ module SRAMController (
             ADDR_HIGH: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
-                addr = ALU_res[17:0] + 1;
+                addr = ALU_res[17:0] + 18'd1;
                 temp_sram_data = 16'bz;
             end
             READ_HIGH: begin
@@ -167,6 +170,17 @@ module SRAMController (
         else 
             ps <= ns;
 
+    end
+
+    always @(posedge clk, posedge rst) begin 
+        if(rst) begin
+            present_read_high <= 16'd0;
+            present_read_low <= 16'd0;
+        end 
+        else begin
+            present_read_high <= next_read_high;
+            present_read_low <= next_read_low;
+        end
     end
 
 endmodule

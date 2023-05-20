@@ -18,6 +18,7 @@ module ID_Reg (
     dest_in,
     src1_in,
     src2_in,
+    freeze,
 
     WB_EN,
     Mem_R_EN,
@@ -47,7 +48,8 @@ module ID_Reg (
         B_in,
         S_in,
         imm_in,
-        inC;
+        inC,
+        freeze;
     input [3:0] 
         EXE_CMD_in,
         dest_in,
@@ -84,6 +86,9 @@ module ID_Reg (
             {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC, src1, src2} <= 155'b0;
         else if (flush)
             {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC, src1, src2} <= 155'b0;
+        else if (freeze)
+            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC, src1, src2} <= 
+            {WB_EN, Mem_R_EN, Mem_W_EN, B, S, imm, EXE_CMD, pc, Val_Rn, Val_Rm, shift_operand, signed_imm_24, dest, outC, src1, src2};
         else begin
             WB_EN <= WB_EN_in;
             Mem_R_EN <= Mem_R_EN_in;

@@ -7,6 +7,7 @@ module EXE_Reg (
     Mem_W_EN_in,
     dest_in,
     Val_Rm_in,
+    freeze,
 
     ALU_res,
     Val_Rm,
@@ -16,7 +17,7 @@ module EXE_Reg (
     dest
 );
 
-    input clk, rst, WB_EN_in, Mem_R_EN_in, Mem_W_EN_in;
+    input clk, rst, WB_EN_in, Mem_R_EN_in, Mem_W_EN_in, freeze;
     input [3:0] dest_in;
     input [31:0] Val_Rm_in, ALU_res_in;
 
@@ -27,6 +28,8 @@ module EXE_Reg (
     always @(posedge clk, posedge rst) begin
         if (rst)
             {WB_EN, Mem_R_EN, Mem_W_EN, dest, Val_Rm, ALU_res} <= 71'b0;
+        else if (freeze)
+            {WB_EN, Mem_R_EN, Mem_W_EN, dest, Val_Rm, ALU_res} <= {WB_EN, Mem_R_EN, Mem_W_EN, dest, Val_Rm, ALU_res};
         else begin
             WB_EN <= WB_EN_in;
             Mem_R_EN <= Mem_R_EN_in;

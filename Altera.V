@@ -301,12 +301,12 @@ input          TD_CLK27;            //	TV Decoder 27MHz CLK
 ////////////////////////	GPIO	////////////////////////////////
 inout	[35:0]	GPIO_0;					//	GPIO Connection 0
 inout	[35:0]	GPIO_1;					//	GPIO Connection 1
+				
+assign SRAM_UB_N = 1'b0;					
+assign SRAM_LB_N = 1'b0;					
+assign SRAM_CE_N = 1'b0;					
+assign SRAM_OE_N = 1'b0;						
 
-wire [31:0] WB_value;
-
-assign LEDG = WB_value [8:0];
-assign LEDR = WB_value [26:9];
-
-ARM AR(CLOCK_50, SW[0], WB_value);
+ARM AR(CLOCK_50, SW[0], SRAM_DQ, SRAM_ADDR, SRAM_WE_N);
 
 endmodule

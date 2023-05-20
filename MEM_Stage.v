@@ -5,22 +5,31 @@ module MEM_Stage (
     Val_Rm,
     Mem_R_EN,
     Mem_W_EN,
+    WB_EN_IN,
 
     SRAM_data,
 
     SRAM_WE_N,
     SRAM_addr,
     Ready,
-    data_mem
+    data_mem,
+    WB_EN_OUT
 );
-    input Mem_R_EN, Mem_W_EN, clk, rst;
+    input 
+        Mem_R_EN, 
+        Mem_W_EN, 
+        clk, 
+        rst, 
+        WB_EN_IN;
+
     input [31:0] Val_Rm, ALU_res;
 
     inout [15:0] SRAM_data;
 
     output 
         SRAM_WE_N,
-        Ready;
+        Ready,
+        WB_EN_OUT;
 
     output [17:0] SRAM_addr;
     output [31:0] data_mem;
@@ -28,6 +37,12 @@ module MEM_Stage (
     
     wire [31:0] addr;
     assign addr = (ALU_res - 32'd1024) >> 1;
+
+    Mux_2_1 #(1) MUXWB(
+        WB_EN_IN, 
+        1'b0, 
+        Ready, 
+        WB_EN_OUT);
 
     SRAMController SC (
         .clk(clk),
@@ -42,6 +57,7 @@ module MEM_Stage (
         .addr(SRAM_addr),
         .Ready(Ready)
     );
+endmodule
     // memory DM(
     //     .clk(clk),
     //     .rst(rst),
@@ -51,4 +67,3 @@ module MEM_Stage (
     //     .Val_RM(Val_Rm),
     //     .data_mem(data_mem)
     // );
-endmodule

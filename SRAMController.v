@@ -35,6 +35,10 @@ module SRAMController (
     output reg
         SRAM_WE_N,  
         Ready;
+    reg 
+        ld_read,
+        ld_read_high,
+        ld_read_low;
 
     reg [3:0]
         ps, 
@@ -42,10 +46,8 @@ module SRAMController (
 
     reg [15:0]
         temp_sram_data,
-        next_read_high,
-        next_read_low,
-        present_read_high,
-        present_read_low;
+        read_high,
+        read_low;
 
     parameter [3:0]
         IDLE = 4'd0,
@@ -63,21 +65,18 @@ module SRAMController (
 
     assign SRAM_data = temp_sram_data;
 
-    always @(ps, SRAM_data, present_read_high, present_read_low) begin
+    always @(ps) begin
+        ld_read = 1'b0; 
+        ld_read_high = 1'b0;
+        ld_read_low = 1'b0;
         case(ps)
-            IDLE: read_data <= 32'b0;
-            WRITE_LOW: read_data <= 32'b0;
-            WRITE_HIGH: read_data <= 32'b0;
-            WRITE_WAIT: read_data <= 32'b0;
-            ADDR_LOW: read_data <= 32'b0;
-            ADDR_HIGH: next_read_high <= SRAM_data;
-            READ_HIGH: next_read_low <= SRAM_data;
-            WAIT: read_data <= {present_read_high, present_read_low};
-            default: read_data <= 32'b0;
+            ADDR_HIGH: ld_read_high = 1'b1;
+            READ_HIGH: ld_read_low = 1'b1;
+            WAIT: ld_read = 1'b1;
         endcase
     end
 
-    always @(ps, ALU_res, ST_Value) begin
+    always @(ps, ALU_res, ST_Value, MEM_W_EN, MEM_R_EN) begin
         SRAM_WE_N = 1'b1;
         Ready = 1'b1;
         addr = 18'b0;
@@ -86,7 +85,7 @@ module SRAMController (
         case(ps)
             IDLE: begin
                 SRAM_WE_N = 1'b1;
-                Ready = 1'b1;
+                Ready = ~MEM_W_EN & ~MEM_R_EN;
                 addr = 18'b0;
                 temp_sram_data = 16'bz;
             end
@@ -174,12 +173,17 @@ module SRAMController (
 
     always @(posedge clk, posedge rst) begin 
         if(rst) begin
-            present_read_high <= 16'd0;
-            present_read_low <= 16'd0;
+            read_high <= 16'd0;
+            read_low <= 16'd0;
+            read_data <= 32'd0;
         end 
         else begin
-            present_read_high <= next_read_high;
-            present_read_low <= next_read_low;
+            if (ld_read)
+                read_data <= {read_high, read_low};
+            if (ld_read_high)
+                read_high <= SRAM_data;
+            if (ld_read_low)
+                read_low <= SRAM_data;
         end
     end
 

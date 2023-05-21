@@ -1,11 +1,11 @@
-Warning (10273): Verilog HDL warning at SRAMController.v(83): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(90): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(108): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(114): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(120): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(72): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(82): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(100): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(106): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(112): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(119): extended using "x" or "z"
 Warning (10273): Verilog HDL warning at SRAMController.v(126): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(132): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at SRAMController.v(138): extended using "x" or "z"
+Warning (10273): Verilog HDL warning at SRAMController.v(133): extended using "x" or "z"
 Info (10281): Verilog HDL Declaration information at SRAMController.v(49): object "read_high" differs only in case from object "READ_HIGH" in the same scope
 Info (10281): Verilog HDL Declaration information at SRAMController.v(37): object "Ready" differs only in case from object "READY" in the same scope
 Warning (10273): Verilog HDL warning at SRAM.v(24): extended using "x" or "z"

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat May 20 10:36:52 2023
+Analysis & Synthesis Status : Successful - Sun May 21 16:39:45 2023
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : ARM
 Top-level Entity Name : Altera
 Family : Cyclone II
-Total logic elements : 5,566
-    Total combinational functions : 2,731
-    Dedicated logic registers : 3,808
-Total registers : 3808
+Total logic elements : 7,064
+    Total combinational functions : 3,628
+    Dedicated logic registers : 4,564
+Total registers : 4564
 Total pins : 418
 Total virtual pins : 0
-Total memory bits : 24,832
+Total memory bits : 198,656
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

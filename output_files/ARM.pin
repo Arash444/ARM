@@ -392,7 +392,7 @@ GND*                         : G13       :        :                   :         
 GND*                         : G14       :        :                   :         : 4         :                
 GND*                         : G15       :        :                   :         : 4         :                
 GND*                         : G16       :        :                   :         : 4         :                
-TD_CLK27                     : G17       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : G17       :        :                   :         : 4         :                
 GND*                         : G18       :        :                   :         : 4         :                
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
@@ -672,7 +672,7 @@ DRAM_DQ[7]                   : V7        : bidir  : 3.3-V LVTTL       :         
 VCCIO1                       : V8        : power  :                   : 3.3V    : 1         :                
 SRAM_ADDR[11]                : V9        : output : 3.3-V LVTTL       :         : 8         : Y              
 SRAM_ADDR[10]                : V10       : output : 3.3-V LVTTL       :         : 8         : Y              
-GND*                         : V11       :        :                   :         : 8         :                
+TD_CLK27                     : V11       : input  : 3.3-V LVTTL       :         : 8         : N              
 VCCIO8                       : V12       : power  :                   : 3.3V    : 8         :                
 HEX0[6]                      : V13       : output : 3.3-V LVTTL       :         : 8         : Y              
 HEX0[5]                      : V14       : output : 3.3-V LVTTL       :         : 8         : Y              

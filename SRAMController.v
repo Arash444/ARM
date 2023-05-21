@@ -65,22 +65,14 @@ module SRAMController (
 
     assign SRAM_data = temp_sram_data;
 
-    always @(ps) begin
-        ld_read = 1'b0; 
-        ld_read_high = 1'b0;
-        ld_read_low = 1'b0;
-        case(ps)
-            ADDR_HIGH: ld_read_high = 1'b1;
-            READ_HIGH: ld_read_low = 1'b1;
-            WAIT: ld_read = 1'b1;
-        endcase
-    end
-
     always @(ps, ALU_res, ST_Value, MEM_W_EN, MEM_R_EN) begin
         SRAM_WE_N = 1'b1;
         Ready = 1'b1;
         addr = 18'b0;
         temp_sram_data = 16'bz;
+        ld_read = 1'b0; 
+        ld_read_high = 1'b0;
+        ld_read_low = 1'b0;
 
         case(ps)
             IDLE: begin
@@ -118,18 +110,21 @@ module SRAMController (
                 Ready = 1'b0;
                 addr = ALU_res[17:0] + 18'd1;
                 temp_sram_data = 16'bz;
+                ld_read_low = 1'b1;
             end
             READ_HIGH: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
                 addr = 18'b0;
                 temp_sram_data = 16'bz;
+                ld_read_high = 1'b1;
             end
             WAIT: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
                 addr = 18'b0;
                 temp_sram_data = 16'bz;
+                ld_read = 1'b1;
             end
             READY: begin
                 SRAM_WE_N = 1'b1;

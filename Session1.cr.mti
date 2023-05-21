@@ -68,12 +68,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ID_Reg
 
-} {} {}} C:/project/ARM/SRAM.v {1 {vlog -work work -stats=none C:/project/ARM/SRAM.v
+} {} {}} C:/project/ARM/Instru_mem.v {1 {vlog -work work -stats=none C:/project/ARM/Instru_mem.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module SRAM
+-- Compiling module Instru_mem
 
 Top level modules:
-	SRAM
+	Instru_mem
 
 } {} {}} C:/project/ARM/PC.v {1 {vlog -work work -stats=none C:/project/ARM/PC.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -82,12 +82,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PC
 
-} {} {}} C:/project/ARM/Instru_mem.v {1 {vlog -work work -stats=none C:/project/ARM/Instru_mem.v
+} {} {}} C:/project/ARM/IF_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/IF_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module Instru_mem
+-- Compiling module IF_Reg
 
 Top level modules:
-	Instru_mem
+	IF_Reg
 
 } {} {}} C:/project/ARM/WB_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/WB_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -96,26 +96,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	WB_Stage
 
-} {} {}} C:/project/ARM/IF_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/IF_Reg.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IF_Reg
-
-Top level modules:
-	IF_Reg
-
 } {} {}} C:/project/ARM/TB.v {1 {vlog -work work -stats=none C:/project/ARM/TB.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module TB
 
 Top level modules:
 	TB
-
-} {} {}} C:/project/ARM/SRAMController.v {1 {vlog -work work -stats=none C:/project/ARM/SRAMController.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module SRAMController
-
-Top level modules:
-	SRAMController
 
 } {} {}} C:/project/ARM/EXE_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -124,19 +110,19 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXE_Reg
 
-} {} {}} C:/project/ARM/ID_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Stage.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ID_Stage
-
-Top level modules:
-	ID_Stage
-
 } {} {}} C:/project/ARM/ARM.v {1 {vlog -work work -stats=none C:/project/ARM/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ARM
 
 Top level modules:
 	ARM
+
+} {} {}} C:/project/ARM/ID_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Stage.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ID_Stage
+
+Top level modules:
+	ID_Stage
 
 } {} {}} C:/project/ARM/ControlUnit.v {1 {vlog -work work -stats=none C:/project/ARM/ControlUnit.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

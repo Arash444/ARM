@@ -3,7 +3,7 @@ module SRAM (
     clk,
     write_en,
     addr,
-    data,
+    data
 );
 
     input
@@ -29,7 +29,7 @@ module SRAM (
                 memory[i] <= 16'b0;
             end
         end
-        else if(write_en) begin
+        else if(~ write_en) begin
             memory[addr] <= data;
         end
     end

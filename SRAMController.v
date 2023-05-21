@@ -104,27 +104,30 @@ module SRAMController (
                 Ready = 1'b0;
                 addr = ALU_res[17:0];
                 temp_sram_data = 16'bz;
+                ld_read_low = 1'b1;
             end
             ADDR_HIGH: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
                 addr = ALU_res[17:0] + 18'd1;
                 temp_sram_data = 16'bz;
-                ld_read_low = 1'b1;
+                ld_read_high = 1'b1;
+                //ld_read_low = 1'b1;
             end
             READ_HIGH: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
                 addr = 18'b0;
                 temp_sram_data = 16'bz;
-                ld_read_high = 1'b1;
+                ld_read = 1'b1;
+                //ld_read_high = 1'b1;
             end
             WAIT: begin
                 SRAM_WE_N = 1'b1;
                 Ready = 1'b0;
                 addr = 18'b0;
                 temp_sram_data = 16'bz;
-                ld_read = 1'b1;
+                //ld_read = 1'b1;
             end
             READY: begin
                 SRAM_WE_N = 1'b1;

@@ -59,33 +59,33 @@ module Cache (
     assign index = address[8:3];
     assign tag = address[18:9];
 
-    reg [31:0]
+    wire [31:0]
         temp_data0_way0,
         temp_data1_way0,
 
         temp_data0_way1,
         temp_data1_way1;
 
-    reg [9:0]
+    wire [9:0]
         temp_tag_way0,
         temp_tag_way1;
 
 
     ////////////////////////////////////////////////////////////////// Read
 
-    always@(index, data0_way0, data1_way0, tag_way0) begin // way0
-            temp_data0_way0 = data0_way0[index];
-            temp_data1_way0 = data1_way0[index];
-            temp_tag_way0 = tag_way0[index];
-    end
+    // way0
+    assign temp_data0_way0 = data0_way0[index];
+    assign temp_data1_way0 = data1_way0[index];
+    assign temp_tag_way0 = tag_way0[index];
 
-    always@(index, data0_way1, data1_way1, tag_way1) begin // way1
-            temp_data0_way1 = data0_way1[index];
-            temp_data1_way1 = data1_way1[index];
-            temp_tag_way1 = tag_way1[index];
-    end
+    // way1
+    assign temp_data0_way1 = data0_way1[index];
+    assign temp_data1_way1 = data1_way1[index];
+    assign temp_tag_way1 = tag_way1[index];
 
     ////////////////////////////////////////////////////////////////// Hit or Miss
+
+    
 
     always @(tag, index, temp_tag_way0, temp_tag_way1, valid_way0, valid_way1, address, temp_data0_way0, temp_data1_way0, temp_data0_way1, temp_data1_way1) begin
         hit = 1'b0;

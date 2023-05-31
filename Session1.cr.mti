@@ -110,19 +110,14 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB
 
-} {} {}} C:/project/ARM/SRAMController.v {0 {vlog -work work -stats=none C:/project/ARM/SRAMController.v
+} {} {}} C:/project/ARM/SRAMController.v {1 {vlog -work work -stats=none C:/project/ARM/SRAMController.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module SRAMController
-** Error: C:/project/ARM/SRAMController.v(89): (vlog-2730) Undefined variable: 'cache_write'.
-** Error: C:/project/ARM/SRAMController.v(90): (vlog-2730) Undefined variable: 'addr_cache'.
-** Error (suppressible): C:/project/ARM/SRAMController.v(95): (vlog-13299) Undefined variable: 'hit'.
-** Error (suppressible): C:/project/ARM/SRAMController.v(140): (vlog-13299) Undefined variable: 'hit'.
-** Error: C:/project/ARM/SRAMController.v(6): (vlog-2730) Undefined variable: 'update_data'.
-** Error: C:/project/ARM/SRAMController.v(6): (vlog-13294) Identifier must be declared with a port mode: update_data.
-** Error: C:/project/ARM/SRAMController.v(7): (vlog-2730) Undefined variable: 'hit'.
-** Error: C:/project/ARM/SRAMController.v(7): (vlog-13294) Identifier must be declared with a port mode: hit.
 
-} {4.0 6.0 8.0 12.0} {}} C:/project/ARM/EXE_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Reg.v
+Top level modules:
+	SRAMController
+
+} {} {}} C:/project/ARM/EXE_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/EXE_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module EXE_Reg
 

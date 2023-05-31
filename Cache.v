@@ -1,6 +1,8 @@
 module Cache (
+    clk,
     rst,
     en_write,
+    en_read,
     update_data,
     address,
     in_data1,
@@ -9,10 +11,12 @@ module Cache (
     hit,
     out_data
 );
-    input 
+    input
+        clk,
         rst,
         update_data,
-        en_write;
+        en_write,
+        en_read;
 
     input [18:0] 
         address;
@@ -50,14 +54,17 @@ module Cache (
         end
     end
 
+    wire 
+        hit_way0,
+        hit_way1,
+        data0_or_data1;
+
     wire [5:0]
         index;
 
     wire [9:0]
         tag;
 
-    assign index = address[8:3];
-    assign tag = address[18:9];
 
     wire [31:0]
         temp_data0_way0,
@@ -70,8 +77,13 @@ module Cache (
         temp_tag_way0,
         temp_tag_way1;
 
+    ////////////////////////////////////////////////////////////////// assign index, tag, data0_or_data1
 
-    ////////////////////////////////////////////////////////////////// Read
+    assign index = address[8:3];
+    assign tag = address[18:9];
+    assign data0_or_data1 = address[2];
+
+    ////////////////////////////////////////////////////////////////// read data & tag
 
     // way0
     assign temp_data0_way0 = data0_way0[index];
@@ -85,40 +97,45 @@ module Cache (
 
     ////////////////////////////////////////////////////////////////// Hit or Miss
 
-    
+    assign hit_way0 = (temp_tag_way0 == tag && valid_way0[index] == 1'b1) ? 1'b1 : 1'b0;
+    assign hit_way1 = (temp_tag_way1 == tag && valid_way1[index] == 1'b1) ? 1'b1 : 1'b0;
+    assign hit = hit_way0 | hit_way1;    
 
-    always @(tag, index, temp_tag_way0, temp_tag_way1, valid_way0, valid_way1, address, temp_data0_way0, temp_data1_way0, temp_data0_way1, temp_data1_way1) begin
-        hit = 1'b0;
-        out_data = 32'b0;
 
-        if(temp_tag_way0 == tag && valid_way0[index] == 1'b1) begin // way0
-            hit = 1'b1;
-            out_data = (address[2] == 1'b0) ? temp_data0_way0 : temp_data1_way0;
-            LRU[index] <= 1'b0;
-        end
+    ////////////////////////////////////////////////////////////////// assign out_data(Read data)
 
-        else if(temp_tag_way1 == tag && valid_way1[index] == 1'b1) begin // way1
-            hit = 1'b1;
-            out_data = (address[2] == 1'b0) ? temp_data0_way1 : temp_data1_way1;
-            LRU[index] <= 1'b1;
+    assign out_data = hit_way0 ? (data0_or_data1 ? temp_data1_way0 : temp_data0_way0) :
+                     (hit_way1 ? (data0_or_data1 ? temp_data1_way1 : temp_data0_way1) : 32'b0);
+
+
+    ////////////////////////////////////////////////////////////////// Update LRU (Read)
+
+    always @ (posedge clk) begin 
+        if (en_read) begin
+            if (hit_way0) begin
+                LRU[index] <= 1'b0;
+            end
+            else if (hit_way1) begin
+                LRU[index] <= 1'b1;
+            end
         end
     end
-
+    
     ////////////////////////////////////////////////////////////////// Write
 
-    always @(posedge en_write) begin //Why posedge?
+    always @(posedge clk) begin
         if(en_write) begin
-            if (update_data) begin
+            if (update_data) begin // update_data: there is data of address but now we wanna change data
                 if(temp_tag_way0 == tag && valid_way0[index] == 1'b1) begin // way0
-                    data0_way1[index] <= in_data1;
-                    data1_way1[index] <= in_data2;
-                    LRU[index] <= 1'b0; //?
+                    data0_way0[index] <= in_data1;
+                    data1_way0[index] <= in_data2;
+                    LRU[index] <= 1'b0; 
                 end
 
                 else if(temp_tag_way1 == tag && valid_way1[index] == 1'b1) begin // way1
                     data0_way1[index] <= in_data1;
                     data1_way1[index] <= in_data2;
-                    LRU[index] <= 1'b1; //check
+                    LRU[index] <= 1'b1; 
                 end
             end
             else begin
@@ -127,14 +144,14 @@ module Cache (
                     data1_way1[index] <= in_data2;
                     tag_way1[index] <= tag;
                     valid_way1[index] <= 1'b1;
-                    LRU[index] <= 1'b1; //check
+                    LRU[index] <= 1'b1;
                 end
                 else if(LRU[index] == 1'b1) begin // way0
-                    data0_way1[index] <= in_data1;
-                    data1_way1[index] <= in_data2;
+                    data0_way0[index] <= in_data1;
+                    data1_way0[index] <= in_data2;
                     tag_way0[index] <= tag;
                     valid_way0[index] <= 1'b1;
-                    LRU[index] <= 1'b0; //check
+                    LRU[index] <= 1'b0;
                 end
             end
         end

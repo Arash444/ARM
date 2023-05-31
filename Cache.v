@@ -1,6 +1,7 @@
 module Cache (
     rst,
     en_write,
+    update_data,
     address,
     in_data1,
     in_data2,
@@ -10,6 +11,7 @@ module Cache (
 );
     input 
         rst,
+        update_data,
         en_write;
 
     input [18:0] 
@@ -104,24 +106,37 @@ module Cache (
 
     ////////////////////////////////////////////////////////////////// Write
 
-    // always @(posedge en_write) begin
-    //     if(en_write) begin
-    //         if(LRU[index] == 1'b0) begin // way1
-    //             data0_way1[index] <= in_data1;
-    //             data1_way1[index] <= in_data2;
-    //             tag_way1[index] <= tag;
-    //             valid_way1[index] <= 1'b1;
-    //             LRU[index] <= 1'b1;
-    //         end
+    always @(posedge en_write) begin //Why posedge?
+        if(en_write) begin
+            if (update_data) begin
+                if(temp_tag_way0 == tag && valid_way0[index] == 1'b1) begin // way0
+                    data0_way1[index] <= in_data1;
+                    data1_way1[index] <= in_data2;
+                    LRU[index] <= 1'b0; //?
+                end
 
-    //         else if(LRU[index] == 1'b1) begin // way0
-    //             data0_way0[index] <= in_data1;
-    //             data1_way0[index] <= in_data2;
-    //             tag_way0[index] <= tag;
-    //             valid_way0[index] <= 1'b1;
-    //             LRU[index] <= 1'b0;
-    //         end
-    //     end
-    // end
-
+                else if(temp_tag_way1 == tag && valid_way1[index] == 1'b1) begin // way1
+                    data0_way1[index] <= in_data1;
+                    data1_way1[index] <= in_data2;
+                    LRU[index] <= 1'b1; //check
+                end
+            end
+            else begin
+                if(LRU[index] == 1'b0) begin // way1
+                    data0_way1[index] <= in_data1;
+                    data1_way1[index] <= in_data2;
+                    tag_way1[index] <= tag;
+                    valid_way1[index] <= 1'b1;
+                    LRU[index] <= 1'b1; //check
+                end
+                else if(LRU[index] == 1'b1) begin // way0
+                    data0_way1[index] <= in_data1;
+                    data1_way1[index] <= in_data2;
+                    tag_way0[index] <= tag;
+                    valid_way0[index] <= 1'b1;
+                    LRU[index] <= 1'b0; //check
+                end
+            end
+        end
+    end
 endmodule

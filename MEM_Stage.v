@@ -35,7 +35,16 @@ module MEM_Stage (
     output [31:0] data_mem;
 
     
-    wire [31:0] addr;
+    wire [31:0] 
+        addr,
+        local_data,
+        cache_data;
+
+    wire 
+        cache_write,
+        //update_data,
+        hit; 
+
     assign addr = (ALU_res - 32'd1024) >> 1;
 
     Mux_2_1 #(1) MUXWB(
@@ -49,13 +58,27 @@ module MEM_Stage (
         .rst(rst),
         .MEM_W_EN(Mem_W_EN),
         .MEM_R_EN(Mem_R_EN),
+        //.update_data(update_data),
         .ALU_res(addr),
         .ST_Value(Val_Rm),
         .SRAM_data(SRAM_data),
         .read_data(data_mem),
+        .local_data(local_data),
         .SRAM_WE_N(SRAM_WE_N),
         .addr(SRAM_addr),
         .Ready(Ready)
+    );
+
+    Cache C(
+        .rst(rst),
+        .en_write(cache_write),
+        .update_data(Mem_W_EN),
+        .address(ALU_res),
+        .in_data1(), //cache controller or mux
+        .in_data2(local_data),
+
+        .hit(hit),
+        .out_data(cache_data)
     );
 endmodule
     // memory DM(

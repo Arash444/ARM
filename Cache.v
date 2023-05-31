@@ -18,7 +18,7 @@ module Cache (
         en_write,
         en_read;
 
-    input [18:0] 
+    input [17:0] 
         address;
 
     input [31:0]
@@ -32,13 +32,13 @@ module Cache (
 
     reg [31:0] data0_way0 [0:63];
     reg [31:0] data1_way0 [0:63];
-    reg [9:0] tag_way0 [0:63];
+    reg [8:0] tag_way0 [0:63];
     reg valid_way0 [0:63];
 
 
     reg [31:0] data0_way1 [0:63];
     reg [31:0] data1_way1 [0:63];
-    reg [9:0] tag_way1 [0:63];
+    reg [8:0] tag_way1 [0:63];
     reg valid_way1 [0:63];
 
     reg LRU [0:63];
@@ -62,7 +62,7 @@ module Cache (
     wire [5:0]
         index;
 
-    wire [9:0]
+    wire [8:0]
         tag;
 
 
@@ -73,14 +73,14 @@ module Cache (
         temp_data0_way1,
         temp_data1_way1;
 
-    wire [9:0]
+    wire [8:0]
         temp_tag_way0,
         temp_tag_way1;
 
     ////////////////////////////////////////////////////////////////// assign index, tag, data0_or_data1
 
     assign index = address[8:3];
-    assign tag = address[18:9];
+    assign tag = address[17:9];
     assign data0_or_data1 = address[2];
 
     ////////////////////////////////////////////////////////////////// read data & tag

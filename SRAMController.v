@@ -106,20 +106,20 @@ module SRAMController (
                 temp_sram_data = ST_Value[31:16];
             end
             READ_LOW: begin
-                addr = ALU_res[17:0];
+                addr = {ALU_res[17:3], 1'b0, ALU_res[1:0]};
                 ld_read_low = 1'b1;
             end
             READ_HIGH: begin
-                addr = ALU_res[17:0] + 18'd1;
+                addr ={ALU_res[17:3], 1'b0, ALU_res[1:0]} + 18'd1;
                 ld_read_high = 1'b1;
             end
             LOCAL_LOW: begin
-                addr = ALU_res[17:0] + 18'd2;
+                addr = {ALU_res[17:3], 1'b1, ALU_res[1:0]};
                 ld_read = 1'b1;
                 ld_local_low = 1'b1;
             end
             LOCAL_HIGH: begin
-                addr = ALU_res[17:0] + 18'd3;
+                addr = {ALU_res[17:3], 1'b1, ALU_res[1:0]} + 18'd1;
                 ld_local_high = 1'b1;
             end
             CACHE_WRITE: begin
@@ -185,7 +185,7 @@ module SRAMController (
                 local_high <= SRAM_data;
             if (ld_local_low)
                 local_low <= SRAM_data;
-        end
+    end
     end
 
 endmodule

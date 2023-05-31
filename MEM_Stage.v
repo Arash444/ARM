@@ -37,6 +37,10 @@ module MEM_Stage (
     
     wire [31:0] 
         addr,
+        SRAM_Read,
+        in_data1,
+        temp_0,
+        temp_1,
         local_data,
         cache_data;
 
@@ -45,7 +49,12 @@ module MEM_Stage (
         //update_data,
         hit; 
 
+    assign in_data1 = Mem_R_EN ? Val_Rm : data_mem;
+
     assign addr = (ALU_res - 32'd1024) >> 1;
+
+    assign data_mem = hit ? cache_data :
+                      (addr[2] ? temp_1 : temp_0);
 
     Mux_2_1 #(1) MUXWB(
         1'b0, 
@@ -62,8 +71,8 @@ module MEM_Stage (
         .ALU_res(addr),
         .ST_Value(Val_Rm),
         .SRAM_data(SRAM_data),
-        .read_data(data_mem),
-        .local_data(local_data),
+        .read_data(temp_0),
+        .local_data(temp_1),
         .SRAM_WE_N(SRAM_WE_N),
         .addr(SRAM_addr),
         .Ready(Ready)
@@ -74,8 +83,8 @@ module MEM_Stage (
         .en_write(cache_write),
         .update_data(Mem_W_EN),
         .address(ALU_res),
-        .in_data1(), //cache controller or mux
-        .in_data2(local_data),
+        .in_data1(temp_0),
+        .in_data2(temp_1),
 
         .hit(hit),
         .out_data(cache_data)
@@ -89,4 +98,4 @@ endmodule
     //     .MEM_R_EN(Mem_R_EN),
     //     .Val_RM(Val_Rm),
     //     .data_mem(data_mem)
-    // );
+    // );z

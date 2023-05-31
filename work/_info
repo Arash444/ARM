@@ -69,7 +69,7 @@ Z8 w1684201862
 8C:/University/CA Lab/ARM-main/ALU.v
 FC:/University/CA Lab/ARM-main/ALU.v
 !i122 742
-L0 1 92
+Z9 L0 1 92
 R4
 r1
 !s85 0
@@ -106,23 +106,23 @@ R5
 R6
 n@a@r@m
 vCache
-!s110 1685526754
+!s110 1685528830
 !i10b 1
-!s100 oN1j[k0nE3MM=NY<2i;J?0
+!s100 VQ0Hbi<]]>hlPH4cWco2o2
 R0
-I[mVRGSM6Mg9PPnLR_BOLI0
+I@H4TCjkiJ6[Ymz9IBOHn<2
 R1
 R2
-w1685526742
+w1685528823
 8C:/project/ARM/Cache.v
 FC:/project/ARM/Cache.v
-!i122 834
+!i122 840
 L0 1 159
 R4
 r1
 !s85 0
 31
-!s108 1685526754.000000
+!s108 1685528830.000000
 !s107 C:/project/ARM/Cache.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Cache.v|
 !i113 1
@@ -141,7 +141,7 @@ w1685514949
 8C:/project/ARM/Cache_cntrlr.v
 FC:/project/ARM/Cache_cntrlr.v
 !i122 826
-Z9 L0 1 32
+Z10 L0 1 32
 R4
 r1
 !s85 0
@@ -165,7 +165,7 @@ R3
 8C:/project/ARM/Condition_Check.v
 FC:/project/ARM/Condition_Check.v
 !i122 823
-Z10 L0 1 37
+Z11 L0 1 37
 R4
 r1
 !s85 0
@@ -250,7 +250,7 @@ R5
 R6
 n@e@x@e_@stage
 vForwardingUnit
-Z11 !s110 1684676224
+Z12 !s110 1684676224
 !i10b 1
 !s100 ?XQj?`=MR]?QDebdml4X^2
 R0
@@ -261,7 +261,7 @@ R8
 8C:/University/CA Lab/ARM-main/ForwardingUnit.v
 FC:/University/CA Lab/ARM-main/ForwardingUnit.v
 !i122 748
-R10
+R11
 R4
 r1
 !s85 0
@@ -274,7 +274,7 @@ R5
 R6
 n@forwarding@unit
 vHazardDetection
-R11
+R12
 !i10b 1
 !s100 djBGePoVG>f;InCk_akZh1
 R0
@@ -405,7 +405,7 @@ R3
 8C:/project/ARM/Instru_mem.v
 FC:/project/ARM/Instru_mem.v
 !i122 814
-Z12 L0 1 62
+Z13 L0 1 62
 R4
 r1
 !s85 0
@@ -465,23 +465,23 @@ R5
 R6
 n@m@e@m_@reg
 vMEM_Stage
-!s110 1685514642
+!s110 1685528706
 !i10b 1
-!s100 dc8J3kA@NiS5P[>`M3aLg2
+!s100 0_WhMFKYMYgfYoYIl:io;3
 R0
-I<5chkGD8>5Tez=2L0Xg2f1
+I7YaROWnZ;31i?J`5GZ0PT3
 R1
 R2
-w1685478326
+w1685528694
 8C:/project/ARM/MEM_Stage.v
 FC:/project/ARM/MEM_Stage.v
-!i122 816
-L0 1 83
+!i122 837
+R9
 R4
 r1
 !s85 0
 31
-!s108 1685514642.000000
+!s108 1685528706.000000
 !s107 C:/project/ARM/MEM_Stage.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
@@ -500,7 +500,7 @@ R8
 8C:/University/CA Lab/ARM-main/Memory.v
 FC:/University/CA Lab/ARM-main/Memory.v
 !i122 757
-R9
+R10
 R4
 r1
 !s85 0
@@ -595,7 +595,7 @@ R3
 8C:/project/ARM/RegisterFile.v
 FC:/project/ARM/RegisterFile.v
 !i122 822
-R12
+R13
 R4
 r1
 !s85 0
@@ -619,7 +619,7 @@ R3
 8C:/project/ARM/SRAM.v
 FC:/project/ARM/SRAM.v
 !i122 824
-R10
+R11
 R4
 r1
 !s85 0
@@ -632,23 +632,23 @@ R5
 R6
 n@s@r@a@m
 vSRAMController
-!s110 1685517597
+!s110 1685528794
 !i10b 1
-!s100 O1>DA]kd5NKY@TJiY@HDj1
+!s100 =V0^FJUX^P4h=MA[jhmU53
 R0
-IO^mOKReml;]>zfRbOMN_10
+I:?GiF35;^ER0USW<<TS?F2
 R1
 R2
-w1685515670
+w1685528740
 8C:/project/ARM/SRAMController.v
 FC:/project/ARM/SRAMController.v
-!i122 830
+!i122 838
 L0 1 191
 R4
 r1
 !s85 0
 31
-!s108 1685517596.000000
+!s108 1685528793.000000
 !s107 C:/project/ARM/SRAMController.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
 !i113 1
@@ -667,7 +667,7 @@ R8
 8C:/University/CA Lab/ARM-main/StatusRegister.v
 FC:/University/CA Lab/ARM-main/StatusRegister.v
 !i122 764
-R9
+R10
 R4
 r1
 !s85 0
@@ -715,7 +715,7 @@ R3
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 820
-Z13 L0 1 14
+Z14 L0 1 14
 R4
 r1
 !s85 0
@@ -762,7 +762,7 @@ R3
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 821
-R13
+R14
 R4
 r1
 !s85 0

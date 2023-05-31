@@ -17,6 +17,9 @@ module Cache_cntrlr (
         MEM_R_EN,
         hit;
     
+    input [31:0]
+        cache_data;
+
     output reg [31:0]
         out_data;
 

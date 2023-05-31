@@ -3,7 +3,7 @@ module SRAMController (
     rst,
     MEM_W_EN,
     MEM_R_EN,
-    update_data,
+    //update_data,
     hit,
     ALU_res,
     ST_Value,
@@ -12,6 +12,7 @@ module SRAMController (
 
     read_data,
     local_data,
+    cache_write,
     SRAM_WE_N,
     addr,
     Ready
@@ -19,6 +20,7 @@ module SRAMController (
     input 
         clk,
         rst,
+        hit,
         MEM_W_EN, 
         MEM_R_EN;
 
@@ -37,7 +39,8 @@ module SRAMController (
         addr;
 
     output reg
-        SRAM_WE_N,  
+        SRAM_WE_N, 
+        cache_write, 
         Ready;
     reg 
         ld_read,
@@ -87,11 +90,9 @@ module SRAMController (
         ld_local_high = 1'b0;
         ld_local_low = 1'b0;
         cache_write = 1'b0;
-        addr_cache = 32'bz;
 
         case(ps)
             IDLE: begin
-                addr_cache = ALU_res;
                 Ready = ~MEM_W_EN & ~(MEM_R_EN & ~hit);
             end
             WRITE_LOW: begin

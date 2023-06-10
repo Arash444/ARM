@@ -46,16 +46,18 @@ module cache_Controller (
   assign mem_address = (address[17:0] - 18'd1024);
   assign read_data = hit ? cache_out : sram_out;
 
-  cache ca (
-    clk,
-    rst,
-    wr_en,
-    rd_en,
-    mem_address,
-    write_data,
-    cache_out,
-    hit
-  );
+    Cache ca (
+        .clk(clk),
+        .rst(rst),
+        .wr_en(wr_en),
+        .rd_en(rd_en),
+        .address(mem_address),
+        .data_in(write_data),
+
+        .hit(hit),
+        .data_out(cache_out)
+    );
+
 
   reg [1:0] ps, ns;
 

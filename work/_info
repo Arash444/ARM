@@ -69,7 +69,7 @@ R3
 8C:/project/ARM/ALU.v
 FC:/project/ARM/ALU.v
 !i122 827
-L0 1 92
+Z7 L0 1 92
 R4
 r1
 !s85 0
@@ -105,47 +105,71 @@ r1
 R5
 R6
 n@a@r@m
-vcache
-!s110 1686419083
+vCache
+!s110 1686427769
 !i10b 1
-!s100 dl_[k;aI62FaIICYFThAN0
+!s100 Nfh<nj4hWAeQN]Sgi@;033
 R0
-I@on@[FWj849iCoiglPM=[1
+I]BI;8Icna9JC@GfI?0P9J3
 R1
 R2
-w1686418480
-8C:/project/ARM/cache.v
-FC:/project/ARM/cache.v
-!i122 830
-L0 1 54
+w1686427761
+Z8 8C:/project/ARM/cache.v
+Z9 FC:/project/ARM/cache.v
+!i122 870
+Z10 L0 1 95
 R4
 r1
 !s85 0
 31
-!s108 1686419082.000000
-!s107 C:/project/ARM/cache.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/cache.v|
+!s108 1686427768.000000
+Z11 !s107 C:/project/ARM/cache.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/cache.v|
+!i113 1
+R5
+R6
+n@cache
+vcache
+!s110 1686427685
+!i10b 1
+!s100 LRRg1_]N5IRCN]h>5S`k12
+R0
+IYJ^Lh[6_aR9nBoo];FAzV1
+R1
+R2
+w1686427619
+R8
+R9
+!i122 868
+R10
+R4
+r1
+!s85 0
+31
+!s108 1686427685.000000
+R11
+R12
 !i113 1
 R5
 R6
 vcache_Controller
-!s110 1686419082
+!s110 1686427767
 !i10b 1
-!s100 Qd4cSFFKzXNS@^ST9;M[c0
+!s100 aS_H7<BBWR3`OZo@30zLd2
 R0
-Iz:S:Xo`XmiDXE_Sn]CoUj3
+I2=T>8Ml>VVH;ode:hC08j3
 R1
 R2
-w1686418768
+w1686427754
 8C:/project/ARM/cache_Controller.v
 FC:/project/ARM/cache_Controller.v
-!i122 829
-L0 1 90
+!i122 869
+R7
 R4
 r1
 !s85 0
 31
-!s108 1686419081.000000
+!s108 1686427766.000000
 !s107 C:/project/ARM/cache_Controller.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/cache_Controller.v|
 !i113 1
@@ -164,7 +188,7 @@ R3
 8C:/project/ARM/Condition_Check.v
 FC:/project/ARM/Condition_Check.v
 !i122 831
-Z7 L0 1 37
+Z13 L0 1 37
 R4
 r1
 !s85 0
@@ -260,7 +284,7 @@ R3
 8C:/project/ARM/ForwardingUnit.v
 FC:/project/ARM/ForwardingUnit.v
 !i122 835
-R7
+R13
 R4
 r1
 !s85 0
@@ -404,7 +428,7 @@ R3
 8C:/project/ARM/Instru_mem.v
 FC:/project/ARM/Instru_mem.v
 !i122 841
-Z8 L0 1 62
+Z14 L0 1 62
 R4
 r1
 !s85 0
@@ -499,7 +523,7 @@ R3
 8C:/project/ARM/Memory.v
 FC:/project/ARM/Memory.v
 !i122 844
-Z9 L0 1 32
+Z15 L0 1 32
 R4
 r1
 !s85 0
@@ -617,7 +641,7 @@ R3
 8C:/project/ARM/RegisterFile.v
 FC:/project/ARM/RegisterFile.v
 !i122 848
-R8
+R14
 R4
 r1
 !s85 0
@@ -641,7 +665,7 @@ w1686337817
 8C:/project/ARM/SRAM.v
 FC:/project/ARM/SRAM.v
 !i122 850
-R7
+R13
 R4
 r1
 !s85 0
@@ -665,7 +689,7 @@ w1686418670
 8C:/project/ARM/SRAM_Controller.v
 FC:/project/ARM/SRAM_Controller.v
 !i122 849
-L0 1 95
+R10
 R4
 r1
 !s85 0
@@ -713,7 +737,7 @@ R3
 8C:/project/ARM/StatusRegister.v
 FC:/project/ARM/StatusRegister.v
 !i122 851
-R9
+R15
 R4
 r1
 !s85 0
@@ -761,7 +785,7 @@ R3
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 819
-Z10 L0 1 14
+Z16 L0 1 14
 R4
 r1
 !s85 0
@@ -808,7 +832,7 @@ R3
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 854
-R10
+R16
 R4
 r1
 !s85 0

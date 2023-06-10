@@ -582,6 +582,29 @@ r1
 R5
 R6
 n@p@c
+vregister
+!s110 1686419320
+!i10b 1
+!s100 g?SNJJIhWjZQTa:P8?Bm23
+R0
+IKOoakiR_;<T[[QYzLhLEJ1
+R1
+R2
+w1686419294
+8C:/project/ARM/register.v
+FC:/project/ARM/register.v
+!i122 855
+L0 1 29
+R4
+r1
+!s85 0
+31
+!s108 1686419319.000000
+!s107 C:/project/ARM/register.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/register.v|
+!i113 1
+R5
+R6
 vRegisterFile
 !s110 1686419108
 !i10b 1

@@ -34,9 +34,6 @@ module MEM_Stage (
     output [17:0] SRAM_addr;
     output [31:0] data_mem;
 
-    
-    wire [31:0] addr;
-    assign addr = (ALU_res - 32'd1024) >> 1;
 
     Mux_2_1 #(1) MUXWB(
         1'b0, 
@@ -44,26 +41,28 @@ module MEM_Stage (
         Ready, 
         WB_EN_OUT);
 
-    SRAMController SC (
+    cache_Controller cache_cntrler (
         .clk(clk),
         .rst(rst),
-        .MEM_W_EN(Mem_W_EN),
-        .MEM_R_EN(Mem_R_EN),
-        .ALU_res(addr),
-        .ST_Value(Val_Rm),
-        .SRAM_data(SRAM_data),
+        .wr_en(Mem_W_EN),
+        .rd_en(Mem_R_EN),
+        .address(ALU_res),
+        .write_data(Val_Rm),
         .read_data(data_mem),
-        .SRAM_WE_N(SRAM_WE_N),
-        .addr(SRAM_addr),
-        .Ready(Ready)
+        .ready(Ready),
+        .SRAM_DQ(SRAM_data),
+        .SRAM_ADDR(SRAM_addr),
+        .SRAM_WE_N(SRAM_WE_N)
     );
+    
 endmodule
-    // memory DM(
-    //     .clk(clk),
-    //     .rst(rst),
-    //     .addr(addr),
-    //     .MEM_W_EN(Mem_W_EN),
-    //     .MEM_R_EN(Mem_R_EN),
-    //     .Val_RM(Val_Rm),
-    //     .data_mem(data_mem)
-    // );
+
+
+
+/*
+  assign SRAM_UB_N = 1'b0;
+  assign SRAM_LB_N = 1'b0;
+  assign SRAM_CE_N = 1'b0;
+  assign SRAM_OE_N = 1'b0;
+
+*/

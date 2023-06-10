@@ -606,6 +606,30 @@ r1
 R5
 R6
 n@s@r@a@m
+vSRAM_Controller
+!s110 1686418687
+!i10b 1
+!s100 XS^gYoa`9oUe_8H4EUoXd2
+R0
+Io?`c?A1:`^FX9]KX8QXF@0
+R1
+R2
+w1686418670
+8C:/project/ARM/SRAM_Controller.v
+FC:/project/ARM/SRAM_Controller.v
+!i122 822
+L0 1 95
+R4
+r1
+!s85 0
+31
+!s108 1686418686.000000
+!s107 C:/project/ARM/SRAM_Controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAM_Controller.v|
+!i113 1
+R5
+R6
+n@s@r@a@m_@controller
 vSRAMController
 !s110 1686418563
 !i10b 1

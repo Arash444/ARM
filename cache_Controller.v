@@ -9,10 +9,6 @@ module cache_Controller (
   output reg ready,
   inout [15:0] SRAM_DQ,
   output [17:0] SRAM_ADDR,
-  output SRAM_UB_N,
-  output SRAM_LB_N,
-  output SRAM_CE_N,
-  output SRAM_OE_N,
   output SRAM_WE_N
 );
   wire done;
@@ -33,10 +29,6 @@ module cache_Controller (
     done,
     SRAM_DQ,
     SRAM_ADDR,
-    SRAM_UB_N,
-    SRAM_LB_N,
-    SRAM_CE_N,
-    SRAM_OE_N,
     SRAM_WE_N
   );
 

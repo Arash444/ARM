@@ -9,20 +9,11 @@ module SRAM_Controller (
   output reg ready,
   inout [15:0] SRAM_DQ,
   output reg [17:0] SRAM_ADDR,
-  output SRAM_UB_N,
-  output SRAM_LB_N,
-  output SRAM_CE_N,
-  output SRAM_OE_N,
   output reg SRAM_WE_N
 );
 
   wire [17:0] mem_address;
   assign mem_address = (address[17:0] - 18'd1024) >> 1;
-
-  assign SRAM_UB_N = 1'b0;
-  assign SRAM_LB_N = 1'b0;
-  assign SRAM_CE_N = 1'b0;
-  assign SRAM_OE_N = 1'b0;
 
   reg load_high_reg_read;
   reg load_low_reg_read;

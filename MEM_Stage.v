@@ -56,13 +56,3 @@ module MEM_Stage (
     );
     
 endmodule
-
-
-
-/*
-  assign SRAM_UB_N = 1'b0;
-  assign SRAM_LB_N = 1'b0;
-  assign SRAM_CE_N = 1'b0;
-  assign SRAM_OE_N = 1'b0;
-
-*/

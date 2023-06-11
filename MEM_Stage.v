@@ -1,4 +1,4 @@
-module StageMem(
+module MEM_Stage(
     input clk, rst,
     input WB_EN_IN, Mem_R_EN, Mem_W_EN,
     input [31:0] ALU_res, Val_Rm,
@@ -34,7 +34,7 @@ module StageMem(
         .address(ALU_res),
         .writeData(Val_Rm),
         .readData(data_mem),
-        .Ready(Ready),
+        .ready(Ready),
         .sramReady(sramReady),
         .sramReadData(sramReadData),
         .sramWrEn(sramMemWEnIn), .sramRdEn(sramMemREnIn)

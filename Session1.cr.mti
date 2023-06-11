@@ -40,13 +40,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	EXE_Stage
 
-} {} {}} C:/project/ARM/testbench.v {1 {vlog -work work -stats=none C:/project/ARM/testbench.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module testbench
-
-Top level modules:
-	testbench
-
 } {} {}} C:/project/ARM/Adder.v {1 {vlog -work work -stats=none C:/project/ARM/Adder.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Adder
@@ -63,10 +56,10 @@ Top level modules:
 
 } {} {}} C:/project/ARM/MEM_Stage.v {1 {vlog -work work -stats=none C:/project/ARM/MEM_Stage.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MEM_Stage
+-- Compiling module StageMem
 
 Top level modules:
-	MEM_Stage
+	StageMem
 
 } {} {}} C:/project/ARM/ID_Reg.v {1 {vlog -work work -stats=none C:/project/ARM/ID_Reg.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -116,6 +109,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	TB
+
+} {} {}} C:/project/ARM/SRAMController.v {1 {vlog -work work -stats=none C:/project/ARM/SRAMController.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SramController
+
+Top level modules:
+	SramController
 
 } {} {}} C:/project/ARM/Val2Gen.v {1 {vlog -work work -stats=none C:/project/ARM/Val2Gen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

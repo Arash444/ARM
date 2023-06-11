@@ -449,8 +449,8 @@ IAQ;f=0nebn62:a_U0_PAM3
 R1
 R2
 Z10 w1686494220
-8C:/project/ARM/MEM_Stage.v
-FC:/project/ARM/MEM_Stage.v
+Z11 8C:/project/ARM/MEM_Stage.v
+Z12 FC:/project/ARM/MEM_Stage.v
 !i122 809
 L0 1 60
 R4
@@ -459,7 +459,7 @@ r1
 31
 !s108 1686494766.000000
 !s107 C:/project/ARM/MEM_Stage.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
 R5
 R6
@@ -476,7 +476,7 @@ R3
 8C:/project/ARM/Memory.v
 FC:/project/ARM/Memory.v
 !i122 810
-Z11 L0 1 32
+Z14 L0 1 32
 R4
 r1
 !s85 0
@@ -607,30 +607,6 @@ r1
 R5
 R6
 n@s@r@a@m
-vSramController
-!s110 1686495016
-!i10b 1
-!s100 21`]O0TMe2@>YIF1e[WH73
-R0
-I^<b9^YBeeehbX:B>M2mM41
-R1
-R2
-w1686495009
-Z12 8C:/project/ARM/SRAMController.v
-Z13 FC:/project/ARM/SRAMController.v
-!i122 822
-L0 1 95
-R4
-r1
-!s85 0
-31
-!s108 1686495016.000000
-Z14 !s107 C:/project/ARM/SRAMController.v|
-Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
-!i113 1
-R5
-R6
-n@sram@controller
 vSRAMController
 !s110 1686494774
 !i10b 1
@@ -640,8 +616,8 @@ I?PHf@khmVP]J@;>kIO>RD3
 R1
 R2
 R10
-R12
-R13
+Z15 8C:/project/ARM/SRAMController.v
+Z16 FC:/project/ARM/SRAMController.v
 !i122 816
 L0 1 188
 R4
@@ -649,12 +625,60 @@ r1
 !s85 0
 31
 !s108 1686494773.000000
-R14
-R15
+Z17 !s107 C:/project/ARM/SRAMController.v|
+Z18 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
 !i113 1
 R5
 R6
 n@s@r@a@m@controller
+vSramController
+!s110 1686495016
+!i10b 1
+!s100 21`]O0TMe2@>YIF1e[WH73
+R0
+I^<b9^YBeeehbX:B>M2mM41
+R1
+R2
+w1686495009
+R15
+R16
+!i122 822
+L0 1 95
+R4
+r1
+!s85 0
+31
+!s108 1686495016.000000
+R17
+R18
+!i113 1
+R5
+R6
+n@sram@controller
+vStageMem
+!s110 1686496222
+!i10b 1
+!s100 iST1_z;?@>:OIIY>Ua`@R3
+R0
+I5j>5SbW@zVS7:WaB=i;AC2
+R1
+R2
+w1686496215
+R11
+R12
+!i122 823
+L0 1 50
+R4
+r1
+!s85 0
+31
+!s108 1686496221.000000
+Z19 !s107 C:/project/ARM/MEM_Stage.v|
+R13
+!i113 1
+R5
+R6
+n@stage@mem
 vStatusRegister
 !s110 1686494775
 !i10b 1
@@ -667,7 +691,7 @@ R3
 8C:/project/ARM/StatusRegister.v
 FC:/project/ARM/StatusRegister.v
 !i122 817
-R11
+R14
 R4
 r1
 !s85 0
@@ -715,7 +739,7 @@ R10
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 819
-Z16 L0 1 14
+Z20 L0 1 14
 R4
 r1
 !s85 0
@@ -762,7 +786,7 @@ R3
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 821
-R16
+R20
 R4
 r1
 !s85 0

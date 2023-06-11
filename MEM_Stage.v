@@ -1,69 +1,50 @@
-module MEM_Stage (
-    clk,
-    rst,
-    ALU_res,
-    Val_Rm,
-    Mem_R_EN,
-    Mem_W_EN,
-    WB_EN_IN,
-
-    SRAM_data,
-
-    SRAM_WE_N,
-    SRAM_addr,
-    Ready,
-    data_mem,
-    WB_EN_OUT
+module StageMem(
+    input clk, rst,
+    input WB_EN_IN, Mem_R_EN, Mem_W_EN,
+    input [31:0] ALU_res, Val_Rm,
+    output WB_EN_OUT,
+    output [31:0] data_mem,
+    output Ready,
+    inout [15:0] SRAM_data,
+    output [17:0] SRAM_addr,
+    output SRAM_WE_N
 );
-    input 
-        Mem_R_EN, 
-        Mem_W_EN, 
-        clk, 
-        rst, 
-        WB_EN_IN;
 
-    input [31:0] Val_Rm, ALU_res;
+    wire sramReady;
+    wire sramMemWEnIn, sramMemREnIn;
+    wire [63:0] sramReadData;
 
-    inout [15:0] SRAM_data;
+    SramController sc (
+        .clk(clk),
+        .rst(rst),
+        .MEM_W_EN(sramMemWEnIn),
+        .MEM_R_EN(sramMemREnIn),
+        .ALU_res(ALU_res),
+        .ST_Value(Val_Rm),
+        .read_data(sramReadData),
+        .Ready(sramReady),
+        .SRAM_data(SRAM_data),
+        .addr(SRAM_addr),
+        .SRAM_WE_N(SRAM_WE_N)
+    );
 
-    output 
-        SRAM_WE_N,
-        Ready,
-        WB_EN_OUT;
-
-    output [17:0] SRAM_addr;
-    output [31:0] data_mem;
-
-    
-    wire [31:0] addr;
-    assign addr = (ALU_res - 32'd1024) >> 1;
+    CacheController cc(
+        .clk(clk), .rst(rst),
+        .wrEn(Mem_W_EN), .rdEn(Mem_R_EN),
+        .address(ALU_res),
+        .writeData(Val_Rm),
+        .readData(data_mem),
+        .Ready(Ready),
+        .sramReady(sramReady),
+        .sramReadData(sramReadData),
+        .sramWrEn(sramMemWEnIn), .sramRdEn(sramMemREnIn)
+    );
 
     Mux_2_1 #(1) MUXWB(
         1'b0, 
         WB_EN_IN, 
         Ready, 
-        WB_EN_OUT);
-
-    SRAMController SC (
-        .clk(clk),
-        .rst(rst),
-        .MEM_W_EN(Mem_W_EN),
-        .MEM_R_EN(Mem_R_EN),
-        .ALU_res(addr),
-        .ST_Value(Val_Rm),
-        .SRAM_data(SRAM_data),
-        .read_data(data_mem),
-        .SRAM_WE_N(SRAM_WE_N),
-        .addr(SRAM_addr),
-        .Ready(Ready)
+        WB_EN_OUT
     );
+
 endmodule
-    // memory DM(
-    //     .clk(clk),
-    //     .rst(rst),
-    //     .addr(addr),
-    //     .MEM_W_EN(Mem_W_EN),
-    //     .MEM_R_EN(Mem_R_EN),
-    //     .Val_RM(Val_Rm),
-    //     .data_mem(data_mem)
-    // );

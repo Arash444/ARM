@@ -28,7 +28,7 @@ module MEM_Stage(
         .SRAM_WE_N(SRAM_WE_N)
     );
     
-    CacheController cc (
+    Cache c (
         .clk(clk),
         .rst(rst),
         .read_en(Mem_R_EN),

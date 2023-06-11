@@ -32,7 +32,6 @@ module MEM_Stage(
         .clk(clk), .rst(rst),
         .wrEn(Mem_W_EN), .rdEn(Mem_R_EN),
         .address(ALU_res),
-        .writeData(Val_Rm),
         .readData(data_mem),
         .ready(Ready),
         .sramReady(sramReady),

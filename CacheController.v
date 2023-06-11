@@ -5,7 +5,6 @@ module CacheController(
     wrEn,
     sramReady,
     address,
-    writeData,
     sramReadData,
 
     sramWrEn,
@@ -21,8 +20,7 @@ module CacheController(
         wrEn,
         sramReady;
     input [31:0]
-        address,
-        writeData;
+        address;
     input [63:0]
         sramReadData;
 

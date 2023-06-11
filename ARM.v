@@ -296,6 +296,7 @@ module ARM (
         .Mem_W_EN(MEM_W_EN_EXE_Reg),
         
         .SRAM_data(SRAM_DQ),
+        
         .SRAM_WE_N(SRAM_WE_N),
         .SRAM_addr(SRAM_ADDR),
         .Ready(Ready_SRAM),

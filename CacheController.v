@@ -1,35 +1,35 @@
 module CacheController(
     clk,
     rst,
-    rdEn,
-    wrEn,
-    sramReady,
+    read_en,
+    write_en,
+    sram_ready,
     address,
-    sramReadData,
+    input_data,
 
-    sramWrEn,
-    sramRdEn,
+    write_en2sram,
+    read_en2sram,
     ready,
-    readData,
+    output_data,
 );
 
     input
         clk,
         rst,
-        rdEn,
-        wrEn,
-        sramReady;
+        read_en,
+        write_en,
+        sram_ready;
     input [31:0]
         address;
     input [63:0]
-        sramReadData;
+        input_data;
 
     output
-        sramWrEn,
-        sramRdEn,
+        write_en2sram,
+        read_en2sram,
         ready;
     output [31:0]
-        readData;
+        output_data;
 
     // Cache
     reg [9:0] way0Tag [0:63];
@@ -81,16 +81,16 @@ module CacheController(
     assign data = hitWay0 ? dataWay0 :
                 hitWay1 ? dataWay1 : 32'dz;
     assign readDataQ = hit ? data :
-                    sramReady ? (offset[2] == 1'b0 ? sramReadData[31:0] : sramReadData[63:32]) : 32'bz;
-    assign readData = rdEn ? readDataQ : 32'bz;
-    assign ready = sramReady;
+                    sram_ready ? (offset[2] == 1'b0 ? input_data[31:0] : input_data[63:32]) : 32'bz;
+    assign output_data = read_en ? readDataQ : 32'bz;
+    assign ready = sram_ready;
 
     // Sram Controller
-    assign sramRdEn = ~hit & rdEn;
-    assign sramWrEn = wrEn;
+    assign read_en2sram = ~hit & read_en;
+    assign write_en2sram = write_en;
 
     always @(posedge clk) begin
-        if (wrEn) begin
+        if (write_en) begin
             if (hitWay0) begin
                 way0Valid[index] = 1'b0;
                 indexLru[index] = 1'b1;
@@ -103,21 +103,20 @@ module CacheController(
     end
 
     always @(posedge clk) begin
-        if (rdEn) begin
+        if (read_en) begin
             if (hit) begin
-                // readData = data;
                 indexLru[index] = hitWay1;
             end
             else begin
-                if (sramReady) begin
+                if (sram_ready) begin
                     if (indexLru[index] == 1'b1) begin
-                        {way0Second[index], way0First[index]} = sramReadData;
+                        {way0Second[index], way0First[index]} = input_data;
                         way0Valid[index] = 1'b1;
                         way0Tag[index] = tag;
                         indexLru[index] = 1'b0;
                     end
                     else begin
-                        {way1Second[index], way1First[index]} = sramReadData;
+                        {way1Second[index], way1First[index]} = input_data;
                         way1Valid[index] = 1'b1;
                         way1Tag[index] = tag;
                         indexLru[index] = 1'b1;

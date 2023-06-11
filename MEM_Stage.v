@@ -27,17 +27,21 @@ module MEM_Stage(
         .addr(SRAM_addr),
         .SRAM_WE_N(SRAM_WE_N)
     );
-
-    CacheController cc(
-        .clk(clk), .rst(rst),
-        .wrEn(Mem_W_EN), .rdEn(Mem_R_EN),
+    
+    CacheController cc (
+        .clk(clk),
+        .rst(rst),
+        .read_en(Mem_R_EN),
+        .write_en(Mem_W_EN),
+        .sram_ready(sramReady),
         .address(ALU_res),
-        .readData(data_mem),
+        .input_data(sramReadData),
+        .write_en2sram(sramMemWEnIn),
+        .read_en2sram(sramMemREnIn),
         .ready(Ready),
-        .sramReady(sramReady),
-        .sramReadData(sramReadData),
-        .sramWrEn(sramMemWEnIn), .sramRdEn(sramMemREnIn)
+        .output_data(data_mem)
     );
+
 
     Mux_2_1 #(1) MUXWB(
         1'b0, 

@@ -110,6 +110,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	TB
 
+} {} {}} C:/project/ARM/SRAMController.v {1 {vlog -work work -stats=none C:/project/ARM/SRAMController.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SramController
+
+Top level modules:
+	SramController
+
 } {} {}} C:/project/ARM/Val2Gen.v {1 {vlog -work work -stats=none C:/project/ARM/Val2Gen.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module Val2Gen
@@ -130,13 +137,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	ID_Stage
-
-} {} {}} C:/project/ARM/CacheController.v {1 {vlog -work work -stats=none C:/project/ARM/CacheController.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CacheController
-
-Top level modules:
-	CacheController
 
 } {} {}} C:/project/ARM/ARM.v {1 {vlog -work work -stats=none C:/project/ARM/ARM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

@@ -1,25 +1,49 @@
 module CacheController(
-    input clk, rst,
-    input rdEn, wrEn,
-    input [31:0] address,
-    input [31:0] writeData,
-    output [31:0] readData,
-    output ready,
-    // Sram Controller
-    input sramReady,
-    input [63:0] sramReadData,
-    output sramWrEn, sramRdEn
+    clk,
+    rst,
+    rdEn,
+    wrEn,
+    sramReady,
+    address,
+    writeData,
+    sramReadData,
+
+    sramWrEn,
+    sramRdEn,
+    ready,
+    readData,
 );
+
+    input
+        clk,
+        rst,
+        rdEn,
+        wrEn,
+        sramReady;
+    input [31:0]
+        address,
+        writeData;
+    input [63:0]
+        sramReadData;
+
+    output
+        sramWrEn,
+        sramRdEn,
+        ready;
+    output [31:0]
+        readData;
+
     // Cache
+    reg [9:0] way0Tag [0:63];
+    reg [9:0] way1Tag [0:63];
     reg [31:0] way0First  [0:63];
     reg [31:0] way0Second [0:63];
     reg [31:0] way1First  [0:63];
     reg [31:0] way1Second [0:63];
-    reg [9:0] way0Tag [0:63];
-    reg [9:0] way1Tag [0:63];
-    reg [63:0] way0Valid;
-    reg [63:0] way1Valid;
-    reg [63:0] indexLru;
+    reg [63:0] 
+        way0Valid,
+        way1Valid,
+        indexLru;
 
     // Address Decode
     wire [2:0] offset;
@@ -30,9 +54,15 @@ module CacheController(
     assign tag = address[18:9];
 
     // Way Decode
-    wire [31:0] dataWay0, dataWay1;
-    wire [9:0] tagWay0, tagWay1;
-    wire validWay0, validWay1;
+    wire [9:0] 
+        tagWay0, 
+        tagWay1;
+    wire [31:0] 
+        dataWay0, 
+        dataWay1;
+    wire 
+        validWay0,
+        validWay1;
     assign dataWay0 = (offset[2] == 1'b0) ? way0First[index] : way0Second[index];
     assign dataWay1 = (offset[2] == 1'b0) ? way1First[index] : way1Second[index];
     assign tagWay0 = way0Tag[index];
@@ -51,9 +81,9 @@ module CacheController(
     wire [31:0] data;
     wire [31:0] readDataQ;
     assign data = hitWay0 ? dataWay0 :
-                  hitWay1 ? dataWay1 : 32'dz;
+                hitWay1 ? dataWay1 : 32'dz;
     assign readDataQ = hit ? data :
-                       sramReady ? (offset[2] == 1'b0 ? sramReadData[31:0] : sramReadData[63:32]) : 32'bz;
+                    sramReady ? (offset[2] == 1'b0 ? sramReadData[31:0] : sramReadData[63:32]) : 32'bz;
     assign readData = rdEn ? readDataQ : 32'bz;
     assign ready = sramReady;
 
@@ -94,7 +124,6 @@ module CacheController(
                         way1Tag[index] = tag;
                         indexLru[index] = 1'b1;
                     end
-                    // readData = (offset[2] == 1'b0) ? sramReadData[31:0] : sramReadData[63:32];
                 end
             end
         end

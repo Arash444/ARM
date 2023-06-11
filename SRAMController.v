@@ -1,34 +1,72 @@
 module SramController(
-    input clk, rst,
-    input MEM_W_EN, MEM_R_EN,
-    input [31:0] ALU_res,
-    input [31:0] ST_Value,
-    output reg [63:0] read_data,
-    output reg Ready,            // to freeze other stages
+    clk,
+    rst,
+    MEM_W_EN,
+    MEM_R_EN,
+    ALU_res,
+    ST_Value,
 
-    inout [15:0] SRAM_data,        // SRAM Data bus 16 bits
-    output reg [17:0] addr, // SRAM Address bus 18 bits
-    output reg SRAM_WE_N         // SRAM Write enable
+    SRAM_data,
+
+    Ready,
+    SRAM_WE_N,
+    addr,
+    read_data
 );
 
-    wire [31:0] memAddr;
-    assign memAddr = ALU_res - 32'd1024;
+    input
+        clk,
+        rst,
+        MEM_W_EN,
+        MEM_R_EN;
+    input [31:0]
+        ALU_res,
+        ST_Value;
 
-    wire [17:0] sramLowAddr, sramHighAddr, sramUpLowAddess, sramUpHighAddess;
+    inout [15:0]
+        SRAM_data;
+
+    output reg
+        Ready,
+        SRAM_WE_N;
+    output reg [17:0]
+        addr;
+    output reg [63:0]
+        read_data;
+
+
+    wire [17:0]
+        sramLowAddr, 
+        sramHighAddr, 
+        sramUpLowAddess, 
+        sramUpHighAddess,
+        sramLowAddrWrite,
+        sramHighAddrWrite;
+    wire [31:0]
+        memAddr;
+
+    reg [2:0]
+        ps,
+        ns;
+    reg [15:0]
+        dq;
+    
+    assign memAddr = ALU_res - 32'd1024;
     assign sramLowAddr = {memAddr[18:3], 2'd0};
     assign sramHighAddr = sramLowAddr + 18'd1;
     assign sramUpLowAddess = sramLowAddr + 18'd2;
     assign sramUpHighAddess = sramLowAddr + 18'd3;
-
-    wire [17:0] sramLowAddrWrite, sramHighAddrWrite;
     assign sramLowAddrWrite = {memAddr[18:2], 1'b0};
     assign sramHighAddrWrite = sramLowAddrWrite + 18'd1;
-
-    reg [15:0] dq;
     assign SRAM_data = MEM_W_EN ? dq : 16'bz;
 
-    localparam Idle = 3'd0, DataLow = 3'd1, DataHigh = 3'd2, DataUpLow = 3'd3, DataUpHigh = 3'd4, Done = 3'd5;
-    reg [2:0] ps, ns;
+    localparam
+        Idle = 3'd0, 
+        DataLow = 3'd1, 
+        DataHigh = 3'd2, 
+        DataUpLow = 3'd3, 
+        DataUpHigh = 3'd4, 
+        Done = 3'd5;
 
     always @(ps or MEM_W_EN or MEM_R_EN) begin
         case (ps)
@@ -89,7 +127,9 @@ module SramController(
     end
 
     always @(posedge clk or posedge rst) begin
-        if (rst) ps <= Idle;
-        else ps <= ns;
+        if (rst)
+            ps <= Idle;
+        else 
+            ps <= ns;
     end
 endmodule

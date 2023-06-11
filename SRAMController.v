@@ -1,188 +1,95 @@
-module SRAMController (
-    clk,
-    rst,
-    MEM_W_EN,
-    MEM_R_EN,
-    ALU_res,
-    ST_Value,
+module SramController(
+    input clk, rst,
+    input MEM_W_EN, MEM_R_EN,
+    input [31:0] ALU_res,
+    input [31:0] ST_Value,
+    output reg [63:0] read_data,
+    output reg Ready,            // to freeze other stages
 
-    SRAM_data,
-
-    read_data,
-    SRAM_WE_N,
-    addr,
-    Ready
+    inout [15:0] SRAM_data,        // SRAM Data bus 16 bits
+    output reg [17:0] addr, // SRAM Address bus 18 bits
+    output reg SRAM_WE_N         // SRAM Write enable
 );
-    input 
-        clk,
-        rst,
-        MEM_W_EN, 
-        MEM_R_EN;
 
-    input [31:0]
-        ALU_res,
-        ST_Value;
+    wire [31:0] memAddr;
+    assign memAddr = ALU_res - 32'd1024;
 
-    inout [15:0]
-        SRAM_data;
+    wire [17:0] sramLowAddr, sramHighAddr, sramUpLowAddess, sramUpHighAddess;
+    assign sramLowAddr = {memAddr[18:3], 2'd0};
+    assign sramHighAddr = sramLowAddr + 18'd1;
+    assign sramUpLowAddess = sramLowAddr + 18'd2;
+    assign sramUpHighAddess = sramLowAddr + 18'd3;
 
-    output reg [31:0]
-        read_data;
+    wire [17:0] sramLowAddrWrite, sramHighAddrWrite;
+    assign sramLowAddrWrite = {memAddr[18:2], 1'b0};
+    assign sramHighAddrWrite = sramLowAddrWrite + 18'd1;
 
-    output reg [17:0]
-        addr;
+    reg [15:0] dq;
+    assign SRAM_data = MEM_W_EN ? dq : 16'bz;
 
-    output reg
-        SRAM_WE_N,  
-        Ready;
-    reg 
-        ld_read,
-        ld_read_high,
-        ld_read_low;
+    localparam Idle = 3'd0, DataLow = 3'd1, DataHigh = 3'd2, DataUpLow = 3'd3, DataUpHigh = 3'd4, Done = 3'd5;
+    reg [2:0] ps, ns;
 
-    reg [3:0]
-        ps, 
-        ns;
+    always @(ps or MEM_W_EN or MEM_R_EN) begin
+        case (ps)
+            Idle: ns = (MEM_W_EN == 1'b1 || MEM_R_EN == 1'b1) ? DataLow : Idle;
+            DataLow: ns = DataHigh;
+            DataHigh: ns = DataUpLow;
+            DataUpLow: ns = DataUpHigh;
+            DataUpHigh: ns = Done;
+            Done: ns = Idle;
+        endcase
+    end
 
-    reg [15:0]
-        temp_sram_data,
-        read_high,
-        read_low;
-
-    parameter [3:0]
-        IDLE = 4'd0,
-
-        WRITE_LOW = 4'd1,
-        WRITE_HIGH = 4'd2,
-        WRITE_WAIT = 4'd3,
-
-        ADDR_LOW = 4'd4,
-        ADDR_HIGH = 4'd5,
-        READ_HIGH = 4'd6,
-        
-        WAIT = 4'd7,
-        READY = 4'd8;
-
-    assign SRAM_data = temp_sram_data;
-
-    always @(ps, ALU_res, ST_Value, MEM_W_EN, MEM_R_EN) begin
-        SRAM_WE_N = 1'b1;
-        Ready = 1'b1;
+    always @(*) begin
         addr = 18'b0;
-        temp_sram_data = 16'bz;
-        ld_read = 1'b0; 
-        ld_read_high = 1'b0;
-        ld_read_low = 1'b0;
+        SRAM_WE_N = 1'b1;
+        Ready = 1'b0;
 
-        case(ps)
-            IDLE: begin
+        case (ps)
+            Idle: Ready = ~(MEM_W_EN | MEM_R_EN);
+            DataLow: begin
+                SRAM_WE_N = ~MEM_W_EN;
+                if (MEM_R_EN) begin
+                    addr = sramLowAddr;
+                    read_data[15:0] <= SRAM_data;
+                end
+                else if (MEM_W_EN) begin
+                    addr = sramLowAddrWrite;
+                    dq = ST_Value[15:0];
+                end
+            end
+            DataHigh: begin
+                SRAM_WE_N = ~MEM_W_EN;
+                if (MEM_R_EN) begin
+                    addr = sramHighAddr;
+                    read_data[31:16] <= SRAM_data;
+                end
+                else if (MEM_W_EN) begin
+                    addr = sramHighAddrWrite;
+                    dq = ST_Value[31:16];
+                end
+            end
+            DataUpLow: begin
                 SRAM_WE_N = 1'b1;
-                Ready = ~MEM_W_EN & ~MEM_R_EN;
-                addr = 18'b0;
-                temp_sram_data = 16'bz;
+                if (MEM_R_EN) begin
+                    addr = sramUpLowAddess;
+                    read_data[47:32] <= SRAM_data;
+                end
             end
-            WRITE_LOW: begin
-                SRAM_WE_N = 1'b0;
-                Ready = 1'b0;
-                addr = ALU_res[17:0];
-                temp_sram_data = ST_Value[15:0];
-            end
-            WRITE_HIGH: begin
-                SRAM_WE_N = 1'b0;
-                Ready = 1'b0;
-                addr = ALU_res[17:0] + 18'd1;
-                temp_sram_data = ST_Value[31:16];
-            end
-            WRITE_WAIT: begin
+            DataUpHigh: begin
                 SRAM_WE_N = 1'b1;
-                Ready = 1'b0;
-                addr = 18'b0;
-                temp_sram_data = 16'bz;
+                if (MEM_R_EN) begin
+                    addr = sramUpHighAddess;
+                    read_data[63:48] <= SRAM_data;
+                end
             end
-            ADDR_LOW: begin
-                SRAM_WE_N = 1'b1;
-                Ready = 1'b0;
-                addr = ALU_res[17:0];
-                temp_sram_data = 16'bz;
-                ld_read_low = 1'b1;
-            end
-            ADDR_HIGH: begin
-                SRAM_WE_N = 1'b1;
-                Ready = 1'b0;
-                addr = ALU_res[17:0] + 18'd1;
-                temp_sram_data = 16'bz;
-                ld_read_high = 1'b1;
-                //ld_read_low = 1'b1;
-            end
-            READ_HIGH: begin
-                SRAM_WE_N = 1'b1;
-                Ready = 1'b0;
-                addr = 18'b0;
-                temp_sram_data = 16'bz;
-                ld_read = 1'b1;
-                //ld_read_high = 1'b1;
-            end
-            WAIT: begin
-                SRAM_WE_N = 1'b1;
-                Ready = 1'b0;
-                addr = 18'b0;
-                temp_sram_data = 16'bz;
-                //ld_read = 1'b1;
-            end
-            READY: begin
-                SRAM_WE_N = 1'b1;
-                Ready = 1'b1;
-                addr = 18'b0;
-                temp_sram_data = 16'bz;
-            end
+            Done: Ready = 1'b1;
         endcase
     end
 
-    always @(MEM_W_EN, MEM_R_EN, ps) begin
-        ns = IDLE;
-        case(ps)
-            IDLE: begin
-                if(MEM_W_EN)
-                    ns = WRITE_LOW;
-                else if(MEM_R_EN)
-                    ns = ADDR_LOW;
-                else
-                    ns = IDLE;
-            end
-            WRITE_LOW: ns = WRITE_HIGH;
-            WRITE_HIGH: ns = WRITE_WAIT;
-            WRITE_WAIT: ns = WAIT;
-            ADDR_LOW: ns = ADDR_HIGH;
-            ADDR_HIGH: ns = READ_HIGH;
-            READ_HIGH: ns = WAIT;
-            WAIT: ns = READY;
-            READY: ns = IDLE;
-        endcase
-
+    always @(posedge clk or posedge rst) begin
+        if (rst) ps <= Idle;
+        else ps <= ns;
     end
-
-    always @(posedge clk, posedge rst) begin 
-        if(rst)
-            ps <= 4'd0;
-        else 
-            ps <= ns;
-
-    end
-
-    always @(posedge clk, posedge rst) begin 
-        if(rst) begin
-            read_high <= 16'd0;
-            read_low <= 16'd0;
-            read_data <= 32'd0;
-        end 
-        else begin
-            if (ld_read)
-                read_data <= {read_high, read_low};
-            if (ld_read_high)
-                read_high <= SRAM_data;
-            if (ld_read_low)
-                read_low <= SRAM_data;
-        end
-    end
-
 endmodule

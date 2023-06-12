@@ -106,23 +106,23 @@ R5
 R6
 n@a@r@m
 vCache
-!s110 1686510196
+!s110 1686598253
 !i10b 1
-!s100 8KE8K4AHG<gZjBc@QkS^N3
+!s100 e9A`m9TD]Jf>:V3LgX2oQ1
 R0
-ICX<RH<65doXgW?nLZR0VG3
+IOXH@X24nA89XLUPPZh:if0
 R1
 R2
-w1686510156
+w1686597957
 8C:/project/ARM/Cache.v
 FC:/project/ARM/Cache.v
-!i122 922
-Z7 L0 1 131
+!i122 926
+L0 1 127
 R4
 r1
 !s85 0
 31
-!s108 1686510195.000000
+!s108 1686598253.000000
 !s107 C:/project/ARM/Cache.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Cache.v|
 !i113 1
@@ -141,7 +141,7 @@ w1686510126
 8C:/project/ARM/CacheController.v
 FC:/project/ARM/CacheController.v
 !i122 920
-R7
+L0 1 131
 R4
 r1
 !s85 0
@@ -165,7 +165,7 @@ R3
 8C:/project/ARM/Condition_Check.v
 FC:/project/ARM/Condition_Check.v
 !i122 892
-Z8 L0 1 37
+Z7 L0 1 37
 R4
 r1
 !s85 0
@@ -261,7 +261,7 @@ R3
 8C:/project/ARM/ForwardingUnit.v
 FC:/project/ARM/ForwardingUnit.v
 !i122 896
-R8
+R7
 R4
 r1
 !s85 0
@@ -405,7 +405,7 @@ R3
 8C:/project/ARM/Instru_mem.v
 FC:/project/ARM/Instru_mem.v
 !i122 902
-Z9 L0 1 62
+Z8 L0 1 62
 R4
 r1
 !s85 0
@@ -473,8 +473,8 @@ I8M57OkOn=KZM`1naODThH0
 R1
 R2
 w1686510749
-Z10 8C:/project/ARM/MEM_Stage.v
-Z11 FC:/project/ARM/MEM_Stage.v
+Z9 8C:/project/ARM/MEM_Stage.v
+Z10 FC:/project/ARM/MEM_Stage.v
 !i122 925
 L0 1 82
 R4
@@ -482,8 +482,8 @@ r1
 !s85 0
 31
 !s108 1686510754.000000
-Z12 !s107 C:/project/ARM/MEM_Stage.v|
-Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
+Z11 !s107 C:/project/ARM/MEM_Stage.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/MEM_Stage.v|
 !i113 1
 R5
 R6
@@ -500,7 +500,7 @@ R3
 8C:/project/ARM/Memory.v
 FC:/project/ARM/Memory.v
 !i122 905
-Z14 L0 1 32
+Z13 L0 1 32
 R4
 r1
 !s85 0
@@ -595,7 +595,7 @@ R3
 8C:/project/ARM/RegisterFile.v
 FC:/project/ARM/RegisterFile.v
 !i122 909
-R9
+R8
 R4
 r1
 !s85 0
@@ -619,7 +619,7 @@ w1686337817
 8C:/project/ARM/SRAM.v
 FC:/project/ARM/SRAM.v
 !i122 910
-R8
+R7
 R4
 r1
 !s85 0
@@ -631,30 +631,6 @@ r1
 R5
 R6
 n@s@r@a@m
-vSRAMController
-!s110 1686494774
-!i10b 1
-!s100 VMMmQaHFJdNKW;8m9AU970
-R0
-I?PHf@khmVP]J@;>kIO>RD3
-R1
-R2
-Z15 w1686494220
-Z16 8C:/project/ARM/SRAMController.v
-Z17 FC:/project/ARM/SRAMController.v
-!i122 816
-L0 1 188
-R4
-r1
-!s85 0
-31
-!s108 1686494773.000000
-Z18 !s107 C:/project/ARM/SRAMController.v|
-Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
-!i113 1
-R5
-R6
-n@s@r@a@m@controller
 vSramController
 !s110 1686508666
 !i10b 1
@@ -664,8 +640,8 @@ Ik510IKod1_JCf6DM3]UkW3
 R1
 R2
 w1686500073
-R16
-R17
+Z14 8C:/project/ARM/SRAMController.v
+Z15 FC:/project/ARM/SRAMController.v
 !i122 911
 L0 1 135
 R4
@@ -673,12 +649,36 @@ r1
 !s85 0
 31
 !s108 1686508666.000000
-R18
-R19
+Z16 !s107 C:/project/ARM/SRAMController.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/SRAMController.v|
 !i113 1
 R5
 R6
 n@sram@controller
+vSRAMController
+!s110 1686494774
+!i10b 1
+!s100 VMMmQaHFJdNKW;8m9AU970
+R0
+I?PHf@khmVP]J@;>kIO>RD3
+R1
+R2
+Z18 w1686494220
+R14
+R15
+!i122 816
+L0 1 188
+R4
+r1
+!s85 0
+31
+!s108 1686494773.000000
+R16
+R17
+!i113 1
+R5
+R6
+n@s@r@a@m@controller
 vStageMem
 !s110 1686496585
 !i10b 1
@@ -688,8 +688,8 @@ I5j>5SbW@zVS7:WaB=i;AC2
 R1
 R2
 w1686496215
+R9
 R10
-R11
 !i122 841
 L0 1 50
 R4
@@ -697,8 +697,8 @@ r1
 !s85 0
 31
 !s108 1686496584.000000
+R11
 R12
-R13
 !i113 1
 R5
 R6
@@ -715,7 +715,7 @@ R3
 8C:/project/ARM/StatusRegister.v
 FC:/project/ARM/StatusRegister.v
 !i122 912
-R14
+R13
 R4
 r1
 !s85 0
@@ -759,11 +759,11 @@ R0
 IbgkL@n?H`YOE@E[DDICXX0
 R1
 R2
-R15
+R18
 8C:/project/ARM/testbench.v
 FC:/project/ARM/testbench.v
 !i122 819
-Z20 L0 1 14
+Z19 L0 1 14
 R4
 r1
 !s85 0
@@ -810,7 +810,7 @@ R3
 8C:/project/ARM/WB_Stage.v
 FC:/project/ARM/WB_Stage.v
 !i122 915
-R20
+R19
 R4
 r1
 !s85 0

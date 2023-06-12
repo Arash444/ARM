@@ -37,10 +37,9 @@ module Cache(
     reg [31:0] way0Second [0:63];
     reg [31:0] way1First  [0:63];
     reg [31:0] way1Second [0:63];
-    reg [63:0] 
-        way0Valid,
-        way1Valid,
-        indexLRU;
+    reg way0Valid [0:63];
+    reg way1Valid [0:63];
+    reg indexLRU [0:63];
 
 
     wire 
@@ -83,49 +82,46 @@ module Cache(
     assign read_en2sram = ~hit & read_en;
     assign write_en2sram = write_en;
 
+    integer i;
 
-    always @(posedge clk) begin
-        if (write_en) begin
-            if (hitWay0) begin
-                way0Valid[index] = 1'b0;
-                indexLRU[index] = 1'b1;
-            end
-            else if (hitWay1) begin
-                way1Valid[index] = 1'b0;
-                indexLRU[index] = 1'b0;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (i = 0; i < 64; i = i + 1) begin
+                way0Valid[i] <= 1'd0;
+                way1Valid[i] <= 1'd0;
+                indexLRU[i] <= 1'd0;
             end
         end
-    end
-
-    always @(posedge clk) begin
-        if (read_en) begin
+        else if (write_en) begin
+            if (hitWay0) begin
+                way0Valid[index] <= 1'b0;
+                indexLRU[index] <= 1'b1;
+            end
+            else if (hitWay1) begin
+                way1Valid[index] <= 1'b0;
+                indexLRU[index] <= 1'b0;
+            end
+        end
+        else if (read_en) begin
             if (hit) begin
-                indexLRU[index] = hitWay1;
+                indexLRU[index] <= hitWay1;
             end
             else begin
                 if (sram_ready) begin
                     if (indexLRU[index] == 1'b1) begin
-                        {way0Second[index], way0First[index]} = input_data;
-                        way0Valid[index] = 1'b1;
-                        way0Tag[index] = tag;
-                        indexLRU[index] = 1'b0;
+                        {way0Second[index], way0First[index]} <= input_data;
+                        way0Valid[index] <= 1'b1;
+                        way0Tag[index] <= tag;
+                        indexLRU[index] <= 1'b0;
                     end
                     else begin
                         {way1Second[index], way1First[index]} = input_data;
-                        way1Valid[index] = 1'b1;
-                        way1Tag[index] = tag;
-                        indexLRU[index] = 1'b1;
+                        way1Valid[index] <= 1'b1;
+                        way1Tag[index] <= tag;
+                        indexLRU[index] <= 1'b1;
                     end
                 end
             end
-        end
-    end
-
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            way0Valid = 64'd0;
-            way1Valid = 64'd0;
-            indexLRU = 64'd0;
         end
     end
 endmodule

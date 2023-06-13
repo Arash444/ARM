@@ -34,23 +34,23 @@ Z5 o-work work
 Z6 tCvgOpt 0
 n@adder
 vAltera
-!s110 1686508641
+!s110 1686651185
 !i10b 1
-!s100 O<F`PWfPHXnco[WMKYTPQ3
+!s100 8iO65<TZ_LYm<<SNL2TU71
 R0
-ImPRO@;6He>jIoV]0M`OmH2
+Ih]51YYLVJllOc;bWWhl:H2
 R1
 R2
-R3
+w1686651150
 8C:/project/ARM/Altera.V
 FC:/project/ARM/Altera.V
-!i122 888
-L0 48 265
+!i122 927
+L0 48 267
 R4
 r1
 !s85 0
 31
-!s108 1686508641.000000
+!s108 1686651184.000000
 !s107 C:/project/ARM/Altera.V|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/Altera.V|
 !i113 1
@@ -153,6 +153,29 @@ r1
 R5
 R6
 n@cache@controller
+vclk_divider
+!s110 1686651186
+!i10b 1
+!s100 <lnNg0g=CJ^YoO4lF<gad0
+R0
+I[2flihYf6dKf8<E_>`8?I2
+R1
+R2
+w1686651080
+8C:/project/ARM/clk_divider.v
+FC:/project/ARM/clk_divider.v
+!i122 928
+L0 1 17
+R4
+r1
+!s85 0
+31
+!s108 1686651185.000000
+!s107 C:/project/ARM/clk_divider.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/project/ARM/clk_divider.v|
+!i113 1
+R5
+R6
 vCondition_Check
 !s110 1686508645
 !i10b 1

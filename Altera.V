@@ -307,6 +307,15 @@ assign SRAM_LB_N = 1'b0;
 assign SRAM_CE_N = 1'b0;					
 assign SRAM_OE_N = 1'b0;						
 
-ARM AR(CLOCK_50, SW[0], SRAM_DQ, SRAM_ADDR, SRAM_WE_N);
+wire clk_25;
+
+clk_div cd(
+	.clk(CLOCK_50),
+	.reset(SW[0]),
+    .clk_out(clk_25)
+);
+
+
+ARM AR(clk_25, SW[0], SRAM_DQ, SRAM_ADDR, SRAM_WE_N);
 
 endmodule
